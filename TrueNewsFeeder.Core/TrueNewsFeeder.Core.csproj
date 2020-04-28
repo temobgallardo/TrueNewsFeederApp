@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\TrueNewsFeeder.Models\TrueNewsFeeder.Models.csproj" />
+    <ProjectReference Include="..\TrueNewsFeeder.Repositories\TrueNewsFeeder.Repositories.csproj" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,25 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="MockData\mockdata.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="MockData\mockdata.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\TrueNewsFeeder.Models\TrueNewsFeeder.Models.csproj" />
+    <ProjectReference Include="..\TrueNewsFeeder.Shared\TrueNewsFeeder.Shared.csproj" />
+    <ProjectReference Include="..\TrueNewsFeeder.Utils\TrueNewsFeeder.Utils.csproj" />
+  </ItemGroup>
+
+</Project>

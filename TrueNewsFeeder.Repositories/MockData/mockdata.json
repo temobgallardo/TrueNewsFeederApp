@@ -1,0 +1,266 @@
+{
+    "status": "ok",
+    "totalResults": 38,
+    "articles": [
+        {
+            "source": {
+                "id": null,
+                "name": "Dailymail.co.uk"
+            },
+            "author": "By Marlene Lenthang For Dailymail.com",
+            "title": "Protesters defy lockdowns in California, New York, Virginia and Vermont - Daily Mail",
+            "description": "Protesters have gathered in Virginia's capital in defiance of strict lockdown orders to demand Governor Ralph Northam reopen the economy as legislators gathered for a one-day session.",
+            "url": "https://www.dailymail.co.uk/news/article-8246333/Protesters-descend-Virginias-capital-reopen-economy.html",
+            "urlToImage": "https://i.dailymail.co.uk/1s/2020/04/22/20/27521450-0-image-a-117_1587584312291.jpg",
+            "publishedAt": "2020-04-22T20:42:29Z",
+            "content": "Protesters across the country in Virginia, California, New York and Vermont are defying lockdown orders and protesting in the streets, demanding governors lift lockdown orders as restlessness in the country grows. \r\nIn Virginias capital demonstrators gathered… [+10693 chars]"
+        },
+        {
+            "source": {
+                "id": "cnn",
+                "name": "CNN"
+            },
+            "author": "Paul LeBlanc, CNN",
+            "title": "Las Vegas mayor won't give businesses social distancing guidelines for reopening: 'They better figure it out. That's their job' - CNN",
+            "description": "Las Vegas Mayor Carolyn Goodman on Wednesday repeatedly called for the city's businesses to reopen while refusing to provide any social distancing guidelines on how to do so safely.",
+            "url": "https://www.cnn.com/2020/04/22/politics/las-vegas-mayor-social-distancing-cnntv/index.html",
+            "urlToImage": "https://cdn.cnn.com/cnnnext/dam/assets/200422141042-carolyn-goodman-super-tease.jpg",
+            "publishedAt": "2020-04-22T20:34:40Z",
+            "content": null
+        },
+        {
+            "source": {
+                "id": null,
+                "name": "Variety.com"
+            },
+            "author": "Joe Otterson",
+            "title": "‘Star Wars’ Series From ‘Russian Doll’ Co-Creator Leslye Headland in the Works at Disney Plus (EXCLUSIVE) - Variety",
+            "description": "A new “Star Wars” series is in the works at Disney Plus, Variety has learned from sources. The series hails from Leslye Headland, the co-creator, showrunner, and executive producer of the critically-acclaimed Netflix series “Russian Doll.” Details of the exac…",
+            "url": "https://variety.com/2020/tv/news/star-wars-series-leslye-headland-disney-plus-1234587493/",
+            "urlToImage": "https://pmcvariety.files.wordpress.com/2019/10/leslye-headland-russian-doll-showrunner.jpg?w=1000",
+            "publishedAt": "2020-04-22T20:21:15Z",
+            "content": "A new “Star Wars” series is in the works at Disney Plus, Variety has learned from sources. The series hails from Leslye Headland, the co-creator, showrunner, and executive producer of the critically-acclaimed Netflix series “Russian Doll.”\r\nDetails of the exa… [+1978 chars]"
+        },
+        {
+            "source": {
+                "id": "techcrunch",
+                "name": "TechCrunch"
+            },
+            "author": "Darrell Etherington",
+            "title": "SpaceX successfully launches 60 more Starlink satellites as it continues towards 2020 service debut - TechCrunch",
+            "description": "SpaceX has launched another big batch of Starlink satellites, the low Earth orbit spacecraft that will provide connectivity for its globe-spanning high-bandwidth broadband internet network. This brings the total number of Starlink satellites on orbit to 422, …",
+            "url": "http://techcrunch.com/2020/04/22/spacex-successfully-launches-60-more-starlink-satellites-as-it-continues-towards-2020-service-debut/",
+            "urlToImage": "https://techcrunch.com/wp-content/uploads/2020/04/starlink-6-launch.gif?w=764",
+            "publishedAt": "2020-04-22T20:09:08Z",
+            "content": "SpaceX has launched another big batch of Starlink satellites, the low Earth orbit spacecraft that will provide connectivity for its globe-spanning high-bandwidth broadband internet network. This brings the total number of Starlink satellites on orbit to 422, … [+2910 chars]"
+        },
+        {
+            "source": {
+                "id": "cnn",
+                "name": "CNN"
+            },
+            "author": "Arman Azad, CNN",
+            "title": "Two cats in New York are first pets known to have coronavirus in the US - CNN",
+            "description": "Two cats in New York have been infected with the novel coronavirus, federal officials announced Wednesday. Both had mild respiratory symptoms and are expected to make a full recovery.",
+            "url": "https://www.cnn.com/2020/04/22/health/cats-new-york-coronavirus-trnd/index.html",
+            "urlToImage": "https://cdn.cnn.com/cnnnext/dam/assets/200422133837-cat-coronavirus-super-tease.jpg",
+            "publishedAt": "2020-04-22T20:05:04Z",
+            "content": null
+        },
+        {
+            "source": {
+                "id": "the-verge",
+                "name": "The Verge"
+            },
+            "author": "Nick Statt",
+            "title": "Apple’s default Mail app for the iPhone has a severe security flaw, researchers claim - The Verge",
+            "description": "Security researchers at firm ZecOps have disclosed a severe flaw in the iOS platform’s native Mail app that makes iPhones and iPads vulnerable to remote code execution just through receiving a malicious email.",
+            "url": "https://www.theverge.com/2020/4/22/21231454/apple-iphone-zero-day-exploit-security-flaw-mail-app-ios-zec-ops",
+            "urlToImage": "https://cdn.vox-cdn.com/thumbor/ciFlDP6w9_FnbboSATrnp0i0Pdw=/0x146:2040x1214/fit-in/1200x630/cdn.vox-cdn.com/uploads/chorus_asset/file/19206346/akrales_190913_3628_0412.jpg",
+            "publishedAt": "2020-04-22T19:52:47Z",
+            "content": "The exploit has existed for almost 10 years, the firm says\r\nPhoto by Amelia Holowaty Krales / The Verge\r\nSecurity researchers say the iPhone has a severe flaw in the native iOS Mail app that makes it vulnerable to hackers, according to a report published on W… [+2722 chars]"
+        },
+        {
+            "source": {
+                "id": null,
+                "name": "Gizmodo.com"
+            },
+            "author": "Catie Keck",
+            "title": "CDC Director Says a Second Wave of Coronavirus This Winter Could Be 'More Difficult' - Gizmodo",
+            "description": "The healthcare system in the U.S. has buckled under the current coronavirus pandemic, with overloaded hospitals struggling to keep up. But should a second wave of the outbreak occur simultaneously during the coming flu season, Centers for Disease Control and …",
+            "url": "https://gizmodo.com/cdc-director-says-a-second-wave-of-coronavirus-next-win-1843005916",
+            "urlToImage": "https://i.kinja-img.com/gawker-media/image/upload/c_fill,f_auto,fl_progressive,g_center,h_675,pg_1,q_80,w_1200/w6r0mlnwpie0ke6rffje.jpg",
+            "publishedAt": "2020-04-22T19:48:24Z",
+            "content": "The healthcare system in the U.S. has buckled under the current coronavirus pandemic, with overloaded hospitals struggling to keep up. But should a second wave of the outbreak occur simultaneously during the coming flu season, Centers for Disease Control and … [+2345 chars]"
+        },
+        {
+            "source": {
+                "id": "nbc-news",
+                "name": "NBC News"
+            },
+            "author": "Courtney Kube, Mohammed Syed",
+            "title": "Trump tweets order to 'destroy' Iranian boats. Pentagon calls it a warning. - NBCNews.com",
+            "description": "Three U.S. defense officials told NBC News they were caught off guard by Trump's tweet because he had not ordered a change in the policy or rules of engagement.",
+            "url": "https://www.nbcnews.com/news/military/trump-tweets-order-destroy-iranian-boats-pentagon-calls-it-warning-n1189876",
+            "urlToImage": "https://media3.s-nbcnews.com/j/newscms/2020_17/3319301/200422-north-arabian-gulf-2-ew-147p_dd4394733e2a4bf0f9320108835a03cd.nbcnews-fp-1200-630.jpg",
+            "publishedAt": "2020-04-22T19:42:00Z",
+            "content": "President Donald Trump announced Wednesday that he had directed the Navy to shoot down Iranian gunboats that harass U.S. ships, but Pentagon officials said they had received no new directives.\r\nTrump created a stir when he made the announcement via Twitter ju… [+2996 chars]"
+        },
+        {
+            "source": {
+                "id": null,
+                "name": "Cbssports.com"
+            },
+            "author": "",
+            "title": "2020 NFL Draft: Tua Tagovailoa's medicals not a deal-breaker for Dolphins at combine, per report - CBS Sports",
+            "description": "Miami has a big decision to make with the fifth overall pick",
+            "url": "https://www.cbssports.com/nfl/news/2020-nfl-draft-tua-tagovailoas-medicals-not-a-deal-breaker-for-dolphins-at-combine-per-report/",
+            "urlToImage": "https://sportshub.cbsistatic.com/i/r/2020/03/31/f8b100b3-5cc1-4fdf-a279-56bf52678a94/thumbnail/1200x675/3e533a7394cd86a9f3826b0cddb8018d/tuabama-2.jpg",
+            "publishedAt": "2020-04-22T19:12:57Z",
+            "content": "Tua Tagovailoa's name has been associated with the Dolphins for months, with Miami making several moves last season that essentially positioned themselves to select the former Alabama quarterback in the first round of the 2020 NFL Draft. \r\nThe Dolphins, owner… [+4090 chars]"
+        },
+        {
+            "source": {
+                "id": "the-washington-post",
+                "name": "The Washington Post"
+            },
+            "author": "Aaron Gregg, Renae Merle",
+            "title": "How to get a small-business loan under the new $484 billion coronavirus aid package - The Washington Post",
+            "description": "Congress and the White House recently are preparing to allocate another $250 billion in forgivable small business loans. An earlier $349 billion tranche of funding ran out less than two weeks before the program started.",
+            "url": "https://www.washingtonpost.com/business/2020/04/22/small-business-loan-faq/",
+            "urlToImage": "https://www.washingtonpost.com/resizer/o1KmkfjqAcbkvbqF_mDJ60MICNQ=/1440x0/smart/arc-anglerfish-washpost-prod-washpost.s3.amazonaws.com/public/QCY7Q3EA44I6VBGCA6JNQWIZCE.jpg",
+            "publishedAt": "2020-04-22T19:10:01Z",
+            "content": "The initial loan rollout was marred by glitchy Web portals, a chaotic regulatory process, a frustrating lack of cooperation from big banks and a struggling bureaucracy. Some large hotel and restaurant chains received loans that were meant for Main Street busi… [+10723 chars]"
+        },
+        {
+            "source": {
+                "id": null,
+                "name": "Theathletic.com"
+            },
+            "author": "Ken Rosenthal and Evan Drellich",
+            "title": "MLB report pins Red Sox violations on staffer, issues suspension, takes draft pick - The Athletic",
+            "description": "The report holds a video replay room operator responsible for incidents in 2018 in which some Red Sox players used video to steal signs.",
+            "url": "https://theathletic.com/1766135/2020/04/22/mlb-report-pins-red-sox-violations-on-staffer-issues-suspension-takes-draft-pick/",
+            "urlToImage": "https://cdn.theathletic.com/app/uploads/2020/04/22125103/GettyImages-1010806936-1024x683.jpg",
+            "publishedAt": "2020-04-22T19:08:26Z",
+            "content": "Major League Baseball’s ruling on the Boston Red Sox’s illegal sign stealing in 2018 determined the primary culprit was not the front office, manager Alex Cora or the players, but the team’s video replay system operator.The league, in findings that will be re… [+664 chars]"
+        },
+        {
+            "source": {
+                "id": "ars-technica",
+                "name": "Ars Technica"
+            },
+            "author": "Ron Amadeo",
+            "title": "Motorola launches the Edge+, a $1,000 flagship smartphone - Ars Technica",
+            "description": "It has a Snapdragon 865, 12GB of RAM, and mmWave 5G.",
+            "url": "https://arstechnica.com/gadgets/2020/04/motorolas-launches-the-edge-a-1000-flagship-smartphone/",
+            "urlToImage": "https://cdn.arstechnica.net/wp-content/uploads/2020/04/motorola-edge-thunder-grey-power-sharing-760x380.png",
+            "publishedAt": "2020-04-22T18:46:00Z",
+            "content": "45 with 37 posters participating\r\n<ul><li>\r\n</li><li>\r\n A shot of the front and back. \r\n</li><li>\r\n The edge curves a full 90 degrees. \r\n</li><li>\r\n</li><li>\r\n The top edge (top) has a headphone jack, while the bottom has a speaker and USB-C port. \r\n</li><li>… [+4120 chars]"
+        },
+        {
+            "source": {
+                "id": "fox-news",
+                "name": "Fox News"
+            },
+            "author": "Greg Norman",
+            "title": "New York Gov. Cuomo to protesters wanting economy reopened: ‘Get a job as an essential worker’ - Fox News",
+            "description": "New York Gov. Andrew Cuomo said Wednesday that protesters calling for the state to reopen the economy so they can go back to work could “get a job as an essential worker.”",
+            "url": "https://www.foxnews.com/us/new-york-gov-cuomo-to-protesters-wanting-economy-reopened-get-a-job-as-an-essential-worker",
+            "urlToImage": "https://static.foxnews.com/foxnews.com/content/uploads/2020/04/Cuomo.png",
+            "publishedAt": "2020-04-22T18:43:29Z",
+            "content": "Get all the latest news on coronavirus and more delivered daily to your inbox. Sign up here. \r\nNew York Gov. Andrew Cuomo said Wednesday that protesters calling for the state to reopen the economy so they can go back to work could “get a job as an essential w… [+1835 chars]"
+        },
+        {
+            "source": {
+                "id": null,
+                "name": "Nytimes.com"
+            },
+            "author": null,
+            "title": "Live Stock Market Tracker During Coronavirus Pandemic - The New York Times",
+            "description": "The latest on stock market and business news during the coronavirus outbreak.",
+            "url": "https://www.nytimes.com/2020/04/22/business/stock-market-tracker-live-coronavirus.html",
+            "urlToImage": "https://www.nytimes.com/newsgraphics/2020/04/09/corona-virus-social-images-by-section/assets/Business_promo.jpg?u=1587580357540",
+            "publishedAt": "2020-04-22T18:36:00Z",
+            "content": "Heres what you need to know:\r\nNearly 100 public companies got millions in small business loans.\r\nAs Congress prepares to restock a depleted small business loan fund, complaints are mounting about the publicly traded companies that sucked up hundreds of millio… [+14741 chars]"
+        },
+        {
+            "source": {
+                "id": "the-washington-post",
+                "name": "The Washington Post"
+            },
+            "author": "Samantha Schmidt, Dana Hedgpeth",
+            "title": "Live updates: D.C. reports another single-day high in covid-19 deaths; Virginia lawmakers kick off meeting outside - The Washington Post",
+            "description": "See the latest coronavirus news and developments Wednesday in the Washington region.",
+            "url": "https://www.washingtonpost.com/dc-md-va/2020/04/22/coronavirus-dc-maryland-virginia-live-updates/",
+            "urlToImage": "https://www.washingtonpost.com/resizer/B9SeZUnKB9KJv9JSr6wqZ3w8NwA=/1440x0/smart/d1i4t8bqe7zgj6.cloudfront.net/04-21-2020/t_b4ce18dda719494882869122b340cc62_name_nnustill.jpg",
+            "publishedAt": "2020-04-22T18:34:31Z",
+            "content": "The District reported 15 fatalities Wednesday, matching its highest single-day increase. In all, 127 D.C. residents have succumbed to the virus.\r\nThe city has 18.6 deaths per 100,000 residents. In Maryland, the rate is 14.6 in Prince Georges County and 12.1 i… [+2317 chars]"
+        },
+        {
+            "source": {
+                "id": null,
+                "name": "Youtube.com"
+            },
+            "author": null,
+            "title": "Gronk wasn't done with football, he was done with Belichick — Colin Cowherd | NFL | THE HERD - The Herd with Colin Cowherd",
+            "description": "Colin Cowherd discusses Rob Gronkowski's return to the NFL and the New England Patriots' future on today's show. Hear his reaction to Gronk's decision and he...",
+            "url": "https://www.youtube.com/watch?v=W-W-CefQecs",
+            "urlToImage": "https://i.ytimg.com/vi/W-W-CefQecs/maxresdefault.jpg",
+            "publishedAt": "2020-04-22T18:24:03Z",
+            "content": "Colin Cowherd discusses Rob Gronkowski's return to the NFL and the New England Patriots' future on today's show. Hear his reaction to Gronk's decision and hear what he thinks the Patriots will do in the upcoming draft with their surplus of draft picks.\r\n#TheH… [+1303 chars]"
+        },
+        {
+            "source": {
+                "id": null,
+                "name": "Npr.org"
+            },
+            "author": "",
+            "title": "Rainfall Could Be A Factor In Triggering Some Volcanoes - NPR",
+            "description": "Extreme rainfall might set off volcanoes that are ready to blow. A pair of scientists think that's what happened at Hawaii's Kilauea volcano in 2018, though some volcanologists are doubtful.",
+            "url": "https://www.npr.org/2020/04/22/839866607/did-heavy-rain-cause-hawaiis-historic-volcanic-eruption",
+            "urlToImage": "https://media.npr.org/assets/img/2020/04/22/gettyimages-961563058_wide-212663596821dfc3abbead3e9bc8c476f9db642d.jpg?s=1400",
+            "publishedAt": "2020-04-22T18:07:26Z",
+            "content": "Lava spewed from Kilauea's East Rift Zone in Pahoa, Hawaii amid eruptions from the Kilauea volcano in May 2018.\r\nRonit Fahl/AFP via Getty Images\r\nHeavy rains might have triggered the historic eruption of Kilauea in Hawaii in 2018. That's the bold assertion of… [+5852 chars]"
+        },
+        {
+            "source": {
+                "id": null,
+                "name": "9to5mac.com"
+            },
+            "author": null,
+            "title": "Can you use the iPhone 7 Smart Battery Case with the new iPhone SE? - 9to5Mac",
+            "description": "Apple isn't selling a Smart Battery Case for the new iPhone SE, but the version made for the iPhone 7 works — with one caveat.",
+            "url": "https://9to5mac.com/2020/04/22/iphone-se-2020-smart-battery-case/",
+            "urlToImage": "https://9to5mac.com/wp-content/uploads/sites/6/2020/04/smart-battery-case-camera-cutout.jpg?quality=82&strip=all",
+            "publishedAt": "2020-04-22T18:03:17Z",
+            "content": "While Apple is offering leather and silicone cases for the new iPhone SE, there is not a Smart Battery Case specifically designed for the device. That being said, it does appear that the Smart Battery Case for the iPhone 7 works with the new iPhone SE  with o… [+2819 chars]"
+        },
+        {
+            "source": {
+                "id": null,
+                "name": "Nydailynews.com"
+            },
+            "author": "Jami Ganz",
+            "title": "Bruce Willis’ daughter on why he's quarantining without wife - New York Daily News",
+            "description": "Well that’s one mystery solved.",
+            "url": "https://www.nydailynews.com/snyde/ny-scout-willis-on-bruce-quarantine-20200422-bzytpgbbj5fehdntlgegfxabmq-story.html",
+            "urlToImage": "https://www.nydailynews.com/resizer/EBWMizv_3Ee0c4JC4R5y-7RlsX4=/1200x0/top/arc-anglerfish-arc2-prod-tronc.s3.amazonaws.com/public/DGNBCXMLUBEB7MDCB6UFLASNZ4.jpg",
+            "publishedAt": "2020-04-22T18:03:16Z",
+            "content": null
+        },
+        {
+            "source": {
+                "id": null,
+                "name": "Tmz.com"
+            },
+            "author": "TMZ Staff",
+            "title": "Post Malone to Host Nirvana Cover Concert from Home for COVID-19 Relief - TMZ",
+            "description": "Smells like Post Malone tribute spirit in here.",
+            "url": "https://www.tmz.com/2020/04/22/post-malone-nirvana-cover-concert-from-home-coronavirus-relief/",
+            "urlToImage": "https://imagez.tmz.com/image/9f/16by9/2020/04/22/9f0458040ab44ae6aaacad0808fadd81_xl.jpg",
+            "publishedAt": "2020-04-22T17:42:00Z",
+            "content": "Post Malone is paying to tribute to Kurt Cobain's iconic band with a special concert from home, featuring Nirvana songs ... and it's all for coronavirus relief charities.\r\nThe singer put up a somewhat cryptic video Wednesday, showing himself sitting on a stoo… [+1246 chars]"
+        }
+    ]
+}
