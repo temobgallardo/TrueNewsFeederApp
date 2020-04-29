@@ -12,10 +12,14 @@ namespace TrueNewsFeeder.UnitTest
         [Fact]
         public void ShouldGetNonEmptyString()
         {
+            //From the assembly where this code lives!
+            //this.GetType().Assembly.GetManifestResourceNames();
+            //or from the entry point to the application - there is a difference!
+            //Assembly.GetExecutingAssembly().GetManifestResourceNames()
             var fileName = "mockdata.json";
             // I pass the NewServiceConsumer typeof becouse the data is located in that namespace
             var result = Util.Instance.ReadResourceFile(fileName, typeof(NewsServiceConsumer));
-            Assert.NotEmpty(result);
+            Assert.NotEmpty(result.Result);
         }
     }
 }

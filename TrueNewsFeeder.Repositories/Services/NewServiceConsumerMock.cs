@@ -1,4 +1,7 @@
-﻿using System.Threading.Tasks;
+﻿using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
+using System.Threading.Tasks;
+using TrueNewsFeeder.Models.NewsApi;
 using TrueNewsFeeder.Utils;
 
 namespace TrueNewsFeeder.Repositories.Services
@@ -10,7 +13,10 @@ namespace TrueNewsFeeder.Repositories.Services
         {
             var data = await Util.Instance.ReadResourceFile("mockdata.json", typeof(NewsServiceConsumer));
 
-            return new T();
+            var json = JsonConvert.DeserializeObject<News>(data);
+
+            // TODO: Test this out
+            return json as T;
         }
     }
 }

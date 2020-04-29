@@ -1,6 +1,7 @@
 ﻿using System;
 using System.IO;
 using System.Reflection;
+using System.Threading.Tasks;
 
 namespace TrueNewsFeeder.Utils
 {
@@ -19,7 +20,7 @@ namespace TrueNewsFeeder.Utils
 
         private Util() { }
 
-        public string ReadResourceFile(string fileName, Type typeOfObject) 
+        public async Task<string> ReadResourceFile(string fileName, Type typeOfObject) 
         {
             // You can check the resources within your assembly doing this
             System.Console.WriteLine(this.GetType().Assembly.GetManifestResourceNames());
@@ -27,7 +28,7 @@ namespace TrueNewsFeeder.Utils
             var stream = assembly.GetManifestResourceStream($"{_nameSpace}.{fileName}");
             using (var reader = new StreamReader(stream))
             {
-                return reader.ReadToEnd();
+                return await Task.FromResult(reader.ReadToEnd());
             }
         }
     }
