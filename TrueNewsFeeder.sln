@@ -15,12 +15,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TrueNewsFeeder.Utils", "Tru
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TrueNewsFeeder.Shared", "TrueNewsFeeder.Shared\TrueNewsFeeder.Shared.csproj", "{FDEC905F-7E5B-4CC2-98A0-3CE9BC4EAAA4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TrueNewsFeeder.UnitTest", "TrueNewsFeeder.UnitTest\TrueNewsFeeder.UnitTest.csproj", "{A072BCFE-61A5-4C72-AB45-8964DEACA80C}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "MockData", "MockData", "{27A819E7-3791-4625-BA7C-837B96303FD2}"
-	ProjectSection(SolutionItems) = preProject
-		mockdata.json = mockdata.json
-	EndProjectSection
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TrueNewsFeeder.UnitTest", "TrueNewsFeeder.UnitTest\TrueNewsFeeder.UnitTest.csproj", "{A072BCFE-61A5-4C72-AB45-8964DEACA80C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

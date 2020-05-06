@@ -9,13 +9,12 @@ namespace TrueNewsFeeder.Repositories.Services
     public class NewsServiceConsumer : IService
     {
         private static readonly HttpClient _httpClient = new HttpClient();
-        private string uriHolder = "{0}?country={1}$apiKey={2}";
 
         public async Task<T> GetData<T>() where T : class, new()
         {
             try
             {
-                var uriConstructed = String.Format(uriHolder, AppSettingsManager.Settings["Service"], AppSettingsManager.Settings["AppSecret"], AppSettingsManager.Settings["Country"]);
+                var uriConstructed = String.Format(AppSettingsManager.Settings["UriHolder"], AppSettingsManager.Settings["Service"], AppSettingsManager.Settings["Country"], AppSettingsManager.Settings["AppSecret"]);
                 var uri = new Uri(uriConstructed);
                 var response = await _httpClient.GetAsync(uri);
                 if (response.IsSuccessStatusCode)

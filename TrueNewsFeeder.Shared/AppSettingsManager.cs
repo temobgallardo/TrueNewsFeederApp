@@ -48,7 +48,7 @@ namespace TrueNewsFeeder.Shared
 
                     JToken node = _secrets[path[0]];
                     /*
-                     * Throwing a Cannot access child value on Newtonsoft.Json.Linq.JProperty Exception becouse node does not contain childs inside it
+                     * Throwing a Cannot access child value on Newtonsoft.Json.Linq.JProperty Exception because node does not contain childs inside it
                     for (int i = 0; i < path.Length; i++)
                     {
                         node = node[path[i]];
@@ -59,7 +59,7 @@ namespace TrueNewsFeeder.Shared
                 }
                 catch (System.Exception e)
                 {
-                    Debug.WriteLine("Unable to retrieve secret '{name}'. Error message: ${e.Message}");
+                    Debug.WriteLine("Unable to retrieve secret '{name}'. Error message: " + e.Message);
                     return string.Empty;
                 }
             }

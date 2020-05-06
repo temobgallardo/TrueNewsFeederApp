@@ -6,17 +6,16 @@ using TrueNewsFeeder.Utils;
 
 namespace TrueNewsFeeder.Repositories.Services
 {
-    public class NewServiceConsumerMock : IService
+    public class NewsServiceConsumerMock : IService
     {
         
         public async Task<T> GetData<T>() where T : class, new()
         {
             var data = await Util.Instance.ReadResourceFile("mockdata.json", typeof(NewsServiceConsumer));
 
-            var json = JsonConvert.DeserializeObject<News>(data);
+            var json = JsonConvert.DeserializeObject<T>(data);
 
-            // TODO: Test this out
-            return json as T;
+            return json;
         }
     }
 }
