@@ -1,8 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 using TrueNewsFeeder.Models.NewsApi;
+using TrueNewsFeeder.Repositories.Services;
 using Xunit;
 
 namespace TrueNewsFeeder.UnitTest
@@ -10,9 +8,21 @@ namespace TrueNewsFeeder.UnitTest
     public class NewsServiceConsumerUnitTest
     {
         [Fact]
-        public async Task<News> ShouldGetDataOfTypeNews() 
+        public async Task ShouldGetDataOfTypeNewsMocked()
         {
-            return await Task.FromResult(new News());
-        } 
+            var service = new NewsServiceConsumerMock();
+            var result = await service.GetData<News>();
+            Assert.NotNull(result);
+            Assert.NotEmpty(result.Articles);
+        }
+
+        [Fact]
+        public async Task ShouldGetDataOfTypeNews()
+        {
+            var service = new NewsServiceConsumer();
+            var result = await service.GetData<News>();
+            Assert.NotNull(result);
+            Assert.NotEmpty(result.Articles);
+        }
     }
 }
