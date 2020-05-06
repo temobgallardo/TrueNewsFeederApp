@@ -35,8 +35,8 @@ namespace TrueNewsFeeder.Core.ViewModels
         public override async void ViewAppearing()
         {
             base.ViewAppearing();
-            //_news = await service.GetData<News>();
-            //Articles.AddRange(_news.Articles);
+            _news = await service.GetData<News>();
+            Articles.AddRange(_news.Articles);
 
             /*
             try

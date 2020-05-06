@@ -13,12 +13,13 @@
         android:layout_height="wrap_content"
         android:layout_weight="0.8"
         app:MvxBind="ImagePath UrlToImage"
-        android:layout_gravity="center"/>
+        android:layout_gravity="top"/>
     <LinearLayout
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_weight="1.2"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:layout_gravity="top">
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -33,5 +34,4 @@
             android:textSize="12sp"
             android:fontFamily="@font/georgia"/>
     </LinearLayout>
-
 </LinearLayout>
