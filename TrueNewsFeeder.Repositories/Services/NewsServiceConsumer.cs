@@ -27,7 +27,8 @@ namespace TrueNewsFeeder.Repositories.Services
             {
                 Console.WriteLine(e.Message);
             }
-            return new T();
+
+            return default(T);
         }
     }
 }

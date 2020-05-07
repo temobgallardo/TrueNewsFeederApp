@@ -12,10 +12,10 @@
                android:supportsRtl="true"
                android:theme="@style/AppTheme"
                android:usesCleartextTraffic="true">
-    <!--Cleartext is any not encrypted data from or stored in a network-->
+    <!--Cleartext is any not encrypted data from or stored in a network
+  https://stackoverflow.com/questions/45940861/android-8-cleartext-http-traffic-not-permitted
+               -->
   </application>
   <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-  <!--<uses-permission android:name="android.permission.INTERNET" />
-  https://stackoverflow.com/questions/45940861/android-8-cleartext-http-traffic-not-permitted
-  -->
+  
 </manifest>

@@ -3,6 +3,7 @@ using MvvmCross.Navigation;
 using MvvmCross.ViewModels;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using TrueNewsFeeder.Models.NewsApi;
@@ -14,49 +15,64 @@ namespace TrueNewsFeeder.Core.ViewModels
     {
         private IService service;
         private News _news;
+        
         public MvxObservableCollection<Article> Articles { get; private set; }
-
+        public MvxObservableCollection<Article> CachedArticles { get; private set; }
+        public IMvxAsyncCommand<String> FilterNewsCommandAsync;
+        public IMvxAsyncCommand GetNewsCommandAsync;
         public News NewsBinded
         {
             get => _news;
             set => SetProperty(ref _news, value);
         }
 
-        public IMvxAsyncCommand GetNewsCommandAsync;
-
-        public TrueNewsViewModel(IMvxNavigationService mvxNavigationService, IService serviceApi) : base(mvxNavigationService) 
+        public TrueNewsViewModel(IMvxNavigationService mvxNavigationService, IService serviceApi) : base(mvxNavigationService)
         {
+            Title = "True News Feed";
             service = serviceApi;
             Articles = new MvxObservableCollection<Article>();
+            CachedArticles = new MvxObservableCollection<Article>();
             GetNewsCommandAsync = new MvxAsyncCommand(GetNewsAsync);
+            FilterNewsCommandAsync = new MvxAsyncCommand<String>(FilterNewsByName);
         }
 
-        // TODO: Figure out how to override this method to async Task since async void may result in uncaught exceptions and the only way to get to them is to go to the SynchronizationContext that was active when this method or any async void was started.
+        private async Task FilterNewsByName(string word)
+        {
+            // CachedArticles was initialized in ViewAppearing()
+            if (string.IsNullOrEmpty(word))
+            {
+                Articles.Clear();
+                Articles.AddRange(CachedArticles);
+            }
+            else
+            {
+                Articles.Clear();
+                Articles.AddRange(CachedArticles.Where(article => article.Title.Contains(word)));
+            }
+        }
+
         public override async void ViewAppearing()
         {
             base.ViewAppearing();
-            _news = await service.GetData<News>();
-            Articles.AddRange(_news.Articles);
+            var articles = await GetArticlesFromNewsServiceAsync();
 
-            /*
-            try
-            {
-                var news = await Task.FromResult(GetNewsFromServiceAsync());
-                _news = news.Result;
-                Articles.AddRange(_news.Articles);
-            }
-            catch (Exception)
-            {
-                throw;
-            }
-            */
+            Articles.AddRange(articles);
+            CachedArticles.AddRange(articles);
         }
 
-        public async Task<News> GetNewsFromServiceAsync()
+        public async Task<IList<Article>> GetArticlesFromNewsServiceAsync()
         {
-            return await service.GetData<News>();  
+            _news = await service.GetData<News>();
+
+            if (_news == null)
+            {
+                return default;
+            }
+
+            return _news.Articles;
         }
 
+        // Todo: Try to do more Functional Programming here
         private async Task GetNewsAsync()
         {
             _news = await service.GetData<News>();
