@@ -18,7 +18,7 @@ namespace TrueNewsFeeder.Core.ViewModels
         
         public MvxObservableCollection<Article> Articles { get; private set; }
         public MvxObservableCollection<Article> CachedArticles { get; private set; }
-        public IMvxAsyncCommand<String> FilterNewsCommandAsync;
+        public IMvxCommand<String> FilterNewsCommandAsync;
         public IMvxAsyncCommand GetNewsCommandAsync;
         public News NewsBinded
         {
@@ -33,10 +33,10 @@ namespace TrueNewsFeeder.Core.ViewModels
             Articles = new MvxObservableCollection<Article>();
             CachedArticles = new MvxObservableCollection<Article>();
             GetNewsCommandAsync = new MvxAsyncCommand(GetNewsAsync);
-            FilterNewsCommandAsync = new MvxAsyncCommand<String>(FilterNewsByName);
+            FilterNewsCommandAsync = new MvxCommand<string>(FilterNewsByName);
         }
 
-        private async Task FilterNewsByName(string word)
+        private void FilterNewsByName(string word)
         {
             // CachedArticles was initialized in ViewAppearing()
             if (string.IsNullOrEmpty(word))
