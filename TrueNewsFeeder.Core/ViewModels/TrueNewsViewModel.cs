@@ -19,7 +19,7 @@ namespace TrueNewsFeeder.Core.ViewModels
         public MvxObservableCollection<Article> Articles { get; private set; }
         public MvxObservableCollection<Article> CachedArticles { get; private set; }
         public IMvxCommand<String> FilterNewsCommandAsync;
-        public IMvxAsyncCommand GetNewsCommandAsync;
+        public IMvxAsyncCommand GetNewsCommandAsync { get; private set; }
         public News NewsBinded
         {
             get => _news;
@@ -33,13 +33,15 @@ namespace TrueNewsFeeder.Core.ViewModels
             Articles = new MvxObservableCollection<Article>();
             CachedArticles = new MvxObservableCollection<Article>();
             GetNewsCommandAsync = new MvxAsyncCommand(GetNewsAsync);
-            FilterNewsCommandAsync = new MvxCommand<string>(FilterNewsByName);
+            FilterNewsCommandAsync = new MvxCommand<string>(FilterNewsByTitle);
         }
 
-        private void FilterNewsByName(string word)
+        private void FilterNewsByTitle(string toSearch)
         {
-            // CachedArticles was initialized in ViewAppearing()
-            if (string.IsNullOrEmpty(word))
+            /**
+             * CachedArticles was initialized in ViewAppearing()
+             */
+            if (string.IsNullOrEmpty(toSearch))
             {
                 Articles.Clear();
                 Articles.AddRange(CachedArticles);
@@ -47,7 +49,7 @@ namespace TrueNewsFeeder.Core.ViewModels
             else
             {
                 Articles.Clear();
-                Articles.AddRange(CachedArticles.Where(article => article.Title.Contains(word)));
+                Articles.AddRange(CachedArticles.Where(article => article.Title.Contains(toSearch)));
             }
         }
 
