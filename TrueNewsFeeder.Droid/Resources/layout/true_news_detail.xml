@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <ffimageloading.cross.MvxCachedImageView
+        android:layout_height="100dp"
+        android:layout_width="0dp"
+        app:MvxBind="ImagePath Articles.UrlToImage"
+        android:scaleType="centerCrop"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:MvxBind="Text Content"
+        android:fontFamily="@font/georgia"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:MvxBind="Text Source"
+        android:text="@strings/sources"
+        android:fontFamily="@font/georgia"/>
+</LinearLayout>
