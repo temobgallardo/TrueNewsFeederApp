@@ -23,7 +23,7 @@ namespace TrueNewsFeeder.Utils
         public async Task<string> ReadResourceFile(string fileName, Type typeOfObject) 
         {
             // You can check the resources within your assembly doing this
-            System.Console.WriteLine(this.GetType().Assembly.GetManifestResourceNames());
+            Console.WriteLine(this.GetType().Assembly.GetManifestResourceNames());
             var assembly = IntrospectionExtensions.GetTypeInfo(typeOfObject).Assembly;
             var stream = assembly.GetManifestResourceStream($"{_nameSpace}.{fileName}");
             using (var reader = new StreamReader(stream))

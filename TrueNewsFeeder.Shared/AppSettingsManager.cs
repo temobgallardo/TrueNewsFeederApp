@@ -14,6 +14,9 @@ namespace TrueNewsFeeder.Shared
         private const string Namespace = "TrueNewsFeeder.Shared";
         private const string FileName = "appsettings.json";
 
+        /**
+         * https://www.andrewhoefling.com/Blog/Post/xamarin-app-configuration-control-your-app-settings
+         */
         private AppSettingsManager()
         {
             var assembly = IntrospectionExtensions.GetTypeInfo(typeof(AppSettingsManager)).Assembly;
