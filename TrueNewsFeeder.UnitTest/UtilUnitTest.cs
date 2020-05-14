@@ -1,9 +1,6 @@
-﻿using System.IO;
+﻿using TrueNewsFeeder.Repositories.Services.Implemantation;
 using TrueNewsFeeder.Utils;
 using Xunit;
-using System.Windows;
-using System.Reflection;
-using TrueNewsFeeder.Repositories.Services;
 
 namespace TrueNewsFeeder.UnitTest
 {

@@ -7,5 +7,6 @@ namespace TrueNewsFeeder.Models.NewsApi
         public string Status { get; set; }
         public int TotalResults { get; set; }
         public IList<Article> Articles { get; set; }
+        public IList<Source> Sources { get; set; }
     }
 }
