@@ -10,7 +10,7 @@ using Android.Support.V7.Widget;
 namespace TrueNewsFeeder.Droid.Views
 {
     [MvxActivityPresentation]
-    [Activity(Label = "@string/app_name", Theme = "@style/AppTheme", MainLauncher = true)]
+    [Activity(Label = "@string/app_name", Theme = "@style/AppTheme", MainLauncher = false)]
     public class TrueNewsView : MvxAppCompatActivity<TrueNewsViewModel>, IOnQueryTextListener, IMenuItemOnActionExpandListener
     {
         protected override void OnCreate(Bundle savedInstanceState)
@@ -18,7 +18,7 @@ namespace TrueNewsFeeder.Droid.Views
             base.OnCreate(savedInstanceState);
             // Set our view from the "main" layout resource
             SetContentView(Resource.Layout.true_news_view);
-            SupportActionBar.Title = ViewModel.Title;
+            SupportActionBar.Title = GetString(Resource.String.main_screen_title);
         }
 
         public override bool OnCreateOptionsMenu(IMenu menu)

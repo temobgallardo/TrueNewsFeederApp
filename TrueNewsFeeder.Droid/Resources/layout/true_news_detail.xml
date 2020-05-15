@@ -7,18 +7,28 @@
     android:layout_height="match_parent">
     <ffimageloading.cross.MvxCachedImageView
         android:layout_height="100dp"
-        android:layout_width="0dp"
-        app:MvxBind="ImagePath Articles.UrlToImage"
-        android:scaleType="centerCrop"/>
+        android:layout_width="wrap_content"
+        app:MvxBind="ImagePath Article.UrlToImage"
+        android:scaleType="centerCrop"
+        android:paddingBottom="10dp"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:MvxBind="Text NewsTitle"
+        android:fontFamily="@font/georgiab"
+        android:textSize="20dp"
+        android:padding="10dp"/>
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:MvxBind="Text Content"
-        android:fontFamily="@font/georgia"/>
+        android:fontFamily="@font/georgia"
+        android:padding="6dp"/>
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:MvxBind="Text Source"
-        android:text="@strings/sources"
-        android:fontFamily="@font/georgia"/>
+        android:text="@string/sources"
+        android:fontFamily="@font/georgia"
+        android:padding="10dp"/>
 </LinearLayout>

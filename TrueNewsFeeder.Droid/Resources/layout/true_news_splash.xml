@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center">
+    <TextView
+        android:text="@string/tv_true_news_splash_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="35dp"
+        android:fontFamily="@font/georgiab"
+        android:gravity="center"
+        android:padding="5dp"/>
+    <ImageView
+        android:layout_width="190dp"
+        android:layout_height="190dp"
+        android:src="@drawable/Socrates"
+        android:padding="7dp"
+        android:contentDescription="@string/iv_socrates_logo_description"/>
+</LinearLayout>
