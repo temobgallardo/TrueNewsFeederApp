@@ -14,6 +14,7 @@ namespace TrueNewsFeeder.Droid.Views
     public class TrueNewsSplashView : MvxSplashScreenAppCompatActivity
     {
         public TrueNewsSplashView () : base(Resource.Layout.true_news_splash)
-        { }
+        {
+        }
     }
 }
