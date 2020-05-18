@@ -8,9 +8,7 @@ namespace TrueNewsFeeder.Shared
     public class AppSettingsManager
     {
         private static AppSettingsManager _instance;
-
         private JObject _secrets;
-
         private const string Namespace = "TrueNewsFeeder.Shared";
         private const string FileName = "appsettings.json";
 
