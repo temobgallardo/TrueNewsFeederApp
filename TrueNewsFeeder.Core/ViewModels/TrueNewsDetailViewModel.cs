@@ -34,7 +34,6 @@ namespace TrueNewsFeeder.Core.ViewModels
             get => _sources;
             set => SetProperty(ref _sources, value);
         }
-        public IMvxAsyncCommand GoBackCommand { get; private set; }
 
         public TrueNewsDetailViewModel(IMvxNavigationService navigationService) : base(navigationService)
         {
