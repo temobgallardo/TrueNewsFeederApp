@@ -7,14 +7,13 @@ using MvvmCross.Platforms.Android.Presenters.Attributes;
 namespace TrueNewsFeeder.Droid.Views
 {
     [MvxActivityPresentation]
-    [Activity(Theme = "@style/AppTheme"
+    [Activity(Theme = "@style/AppTheme.Splash"
         , NoHistory = true
         , ScreenOrientation = ScreenOrientation.Portrait
         , MainLauncher = true)]
     public class TrueNewsSplashView : MvxSplashScreenAppCompatActivity
     {
         public TrueNewsSplashView () : base(Resource.Layout.true_news_splash)
-        {
-        }
+        { }
     }
 }

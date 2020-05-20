@@ -13,12 +13,10 @@
         android:textSize="35dp"
         android:fontFamily="@font/georgiab"
         android:gravity="center"
-        android:padding="5dp"
-        android:layout_marginLeft="0.0dp" />
+        android:layout_margin="5dp" />
     <ImageView
         android:layout_width="190dp"
         android:layout_height="190dp"
         android:src="@drawable/Socrates"
-        android:padding="7dp"
         android:contentDescription="@string/iv_socrates_logo_description"/>
 </LinearLayout>

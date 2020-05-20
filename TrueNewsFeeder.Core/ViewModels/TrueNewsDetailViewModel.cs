@@ -4,35 +4,30 @@ using MvvmCross.ViewModels;
 using System;
 using System.Threading.Tasks;
 using TrueNewsFeeder.Models.NewsApi;
+using TrueNewsFeeder.Shared;
 
 namespace TrueNewsFeeder.Core.ViewModels
 {
     public class TrueNewsDetailViewModel : BaseViewModel, IMvxViewModel<Article>
     {
         private Article _article;
-        private string _newsTitle;
-        private string _content;
         private string _sources;
+        private string _publishedAt;
 
         public Article Article
         {
             get => _article;
             set => SetProperty(ref _article, value);
         }
-        public string NewsTitle
-        {
-            get => _newsTitle;
-            set => SetProperty(ref _newsTitle, value);
-        }
-        public string Content
-        {
-            get => _content;
-            set => SetProperty(ref _content, value);
-        }
         public string Source
         {
             get => _sources;
             set => SetProperty(ref _sources, value);
+        }
+        public string PublishedAt
+        {
+            get => _publishedAt;
+            set => SetProperty(ref _publishedAt, value);
         }
 
         public TrueNewsDetailViewModel(IMvxNavigationService navigationService) : base(navigationService)
@@ -45,14 +40,21 @@ namespace TrueNewsFeeder.Core.ViewModels
             await _navigationService.Close(this);
         }
 
-        public void Prepare(Article parameter)
+        public void Prepare(Article article)
         {
-            _article = parameter;
-            _newsTitle = parameter.Title;
-            _content = parameter.Description + Environment.NewLine
-                + parameter.Content;
-            _sources = @"Sources: " + Environment.NewLine + _article.Source.Name;
-            
+            _article = article;
+            _publishedAt = article.PublishedAt.ToString("MMM dd, yyyy hh:mm tt");
+            var cleanSource = article.Source.Name.Replace("Sources", string.Empty).Replace(Environment.NewLine, string.Empty);
+            var citation = string.Format(AppSettingsManager.Settings["ApaCitationPlaceHolder"]
+                , article.Author
+                , article.PublishedAt.ToString("yyyy, MMMM dd")
+                , article.Title
+                , cleanSource
+                , article.Url);
+            _sources = @"Sources: " + Environment.NewLine;
+            _sources += citation;
+
+
         }
     }
 }
