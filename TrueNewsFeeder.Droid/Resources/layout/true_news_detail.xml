@@ -6,29 +6,46 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
     <ffimageloading.cross.MvxCachedImageView
-        android:layout_height="100dp"
-        android:layout_width="wrap_content"
-        app:MvxBind="ImagePath Article.UrlToImage"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
         android:scaleType="centerCrop"
-        android:paddingBottom="10dp"/>
+        android:layout_marginBottom="8dp"
+        app:MvxBind="ImagePath Article.UrlToImage"/>
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:MvxBind="Text NewsTitle"
         android:fontFamily="@font/georgiab"
-        android:textSize="20dp"
-        android:padding="10dp"/>
+        android:textSize="24sp"
+        android:padding="4dp"
+        android:layout_marginTop="8dp"
+        app:MvxBind="Text Article.Title"/>
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:MvxBind="Text Content"
         android:fontFamily="@font/georgia"
-        android:padding="6dp"/>
+        android:textSize="14sp"
+        android:layout_marginBottom="12dp"
+        android:layout_marginLeft="4dp"
+        app:MvxBind="Text PublishedAt"/>
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:MvxBind="Text Source"
+        android:fontFamily="@font/georgia"
+        android:textSize="16sp"
+        android:layout_margin="4dp"
+        android:layout_marginBottom="8dp"
+        android:lineSpacingMultiplier="1"
+        android:lineSpacingExtra="8dp"
+        app:MvxBind="Text Article.Content"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:text="@string/sources"
         android:fontFamily="@font/georgia"
-        android:padding="10dp"/>
+        android:textSize="16sp"
+        android:layout_margin="4dp"
+        android:layout_marginTop="8dp"
+        android:lineSpacingMultiplier="1"
+        android:lineSpacingExtra="8dp"
+        app:MvxBind="Text Source"/>
 </LinearLayout>

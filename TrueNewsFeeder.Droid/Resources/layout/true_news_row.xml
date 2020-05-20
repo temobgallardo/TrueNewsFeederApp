@@ -1,38 +1,45 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<android.support.v7.widget.CardView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="horizontal"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:weightSum="2"
-    android:padding="5dp"
-    android:paddingBottom="10dp">
-    <FFImageLoading.Cross.MvxCachedImageView
-        android:layout_width="0dp"
-        android:layout_height="100dp"
-        android:layout_weight="0.8"
-        app:MvxBind="ImagePath UrlToImage"
-        android:layout_gravity="top"
-        android:scaleType="centerCrop"/>
+    android:layout_marginBottom="12dp"
+    android:clickable="true"
+    android:foreground="?android:attr/selectableItemBackground"
+    android:padding="8dp"
+    app:cardCornerRadius="10dp"
+    app:cardElevation="15dp">
     <LinearLayout
-        android:layout_width="0dp"
+        android:padding="16dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="1.2"
-        android:orientation="vertical"
-        android:layout_gravity="top">
-        <TextView
+        android:orientation="vertical">
+        <FFImageLoading.Cross.MvxCachedImageView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:MvxBind="Text Title"
+            android:layout_gravity="top"
+            android:scaleType="centerCrop"
+            android:layout_marginBottom="8dp"
+            app:MvxBind="ImagePath UrlToImage"/>
+        <TextView
+            android:layout_marginTop="4dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:textStyle="bold"
-            android:textSize="14sp"
-            android:fontFamily="@font/georgiab"/>
+            android:textSize="24sp"
+            android:fontFamily="@font/georgiab"
+            android:lineSpacingExtra="8dp"
+            android:layout_marginBottom="8dp"
+            app:MvxBind="Text Title"/>
         <TextView
+            android:layout_marginTop="4dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:MvxBind="Text Description"
-            android:textSize="12sp"
-            android:fontFamily="@font/georgia"/>
+            android:textSize="16sp"
+            android:fontFamily="@font/georgia"
+            android:lineSpacingExtra="8dp"
+            app:MvxBind="Text Description"/>
     </LinearLayout>
-</LinearLayout>
+</android.support.v7.widget.CardView>

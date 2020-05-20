@@ -8,7 +8,7 @@ using TrueNewsFeeder.Core.ViewModels;
 namespace TrueNewsFeeder.Droid.Views
 {
     [MvxActivityPresentation]
-    [Activity(Theme ="@style/AppTheme", MainLauncher = false)]
+    [Activity(Theme = "@style/AppTheme", MainLauncher = false)]
     public class TrueNewsDetailView: MvxAppCompatActivity<TrueNewsDetailViewModel>
     {
         protected override void OnCreate(Bundle savedInstanceState) 
@@ -17,7 +17,6 @@ namespace TrueNewsFeeder.Droid.Views
             SetContentView(Resource.Layout.true_news_detail);
             SupportActionBar.Title = GetText(Resource.String.screen_detail_title);
             SupportActionBar.SetDisplayHomeAsUpEnabled(true);
-            // TODO: Fix this, not working
             ViewModel.Article.Source.Name = GetString(Resource.String.sources, ViewModel.Article.Source.Name);
         }
 
