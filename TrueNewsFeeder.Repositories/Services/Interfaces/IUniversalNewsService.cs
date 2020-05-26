@@ -7,8 +7,8 @@ namespace TrueNewsFeeder.Repositories.Services.Interfaces
     public interface IUniversalNewsService
     {
         Task<News> GetNews(string request);
-        Task<IList<Article>> GetNewsArticle();
-        Task<IList<Article>> GetNewsArticle(string request);
+        Task<IList<Article>> GetNewsArticles();
+        Task<IList<Article>> GetNewsArticles(string request);
         Task<News> GetNewsSources();
         Task<News> GetNewsSources(string request);
     }

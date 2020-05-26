@@ -52,7 +52,7 @@ namespace TrueNewsFeeder.UnitTest
         [Fact]
         public void ShouldReturnLanguage()
         {
-            var expectedResult = "us";
+            var expectedResult = "en";
             var result = AppSettingsManager.Settings["Language"];
             Assert.Equal(expectedResult, result);
         }
@@ -84,7 +84,7 @@ namespace TrueNewsFeeder.UnitTest
         [Fact]
         public void ShouldReturnUriHolderEverythingAndDomain()
         {
-            var expectedResult = "{0}?language={1}&domains={2}&apiKey={3}";
+            var expectedResult = "{0}?domains={1}&apiKey={2}";
             var result = AppSettingsManager.Settings["UriHolderEverythingAndDomain"];
             Assert.Equal(expectedResult, result);
         }
@@ -100,7 +100,7 @@ namespace TrueNewsFeeder.UnitTest
         [Fact]
         public void ShouldReturnDomains()
         {
-            var expectedResult = "wsj.com,bloomberg.com,nytimes.com,theguardian.com,bbc.com/news,news.yahoo.com,ft.com,ft.com,reuters.com";
+            var expectedResult = "wsj.com,bloomberg.com,nytimes.com,theguardian.com,bbc.com/news,news.yahoo.com,ft.com,reuters.com";
             var result = AppSettingsManager.Settings["Domains"];
             Assert.Equal(expectedResult, result);
         }

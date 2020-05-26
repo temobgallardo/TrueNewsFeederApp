@@ -1,51 +1,56 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<ScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
-    <ffimageloading.cross.MvxCachedImageView
-        android:layout_height="wrap_content"
+    <LinearLayout
+        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:scaleType="centerCrop"
-        android:layout_marginBottom="8dp"
-        app:MvxBind="ImagePath Article.UrlToImage"/>
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/georgiab"
-        android:textSize="24sp"
-        android:padding="4dp"
-        android:layout_marginTop="8dp"
-        app:MvxBind="Text Article.Title"/>
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/georgia"
-        android:textSize="14sp"
-        android:layout_marginBottom="12dp"
-        android:layout_marginLeft="4dp"
-        app:MvxBind="Text PublishedAt"/>
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/georgia"
-        android:textSize="16sp"
-        android:layout_margin="4dp"
-        android:layout_marginBottom="8dp"
-        android:lineSpacingMultiplier="1"
-        android:lineSpacingExtra="8dp"
-        app:MvxBind="Text Article.Content"/>
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/sources"
-        android:fontFamily="@font/georgia"
-        android:textSize="16sp"
-        android:layout_margin="4dp"
-        android:layout_marginTop="8dp"
-        android:lineSpacingMultiplier="1"
-        android:lineSpacingExtra="8dp"
-        app:MvxBind="Text Source"/>
-</LinearLayout>
+        android:layout_height="wrap_content">
+        <ffimageloading.cross.MvxCachedImageView
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:scaleType="centerCrop"
+            android:layout_marginBottom="8dp"
+            app:MvxBind="ImagePath Article.UrlToImage"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/georgiab"
+            android:textSize="24sp"
+            android:padding="4dp"
+            android:layout_marginTop="8dp"
+            app:MvxBind="Text Article.Title"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/georgia"
+            android:textSize="14sp"
+            android:layout_marginBottom="12dp"
+            android:layout_marginLeft="4dp"
+            app:MvxBind="Text PublishedAt"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/georgia"
+            android:textSize="16sp"
+            android:layout_margin="4dp"
+            android:layout_marginBottom="8dp"
+            android:lineSpacingMultiplier="1"
+            android:lineSpacingExtra="8dp"
+            app:MvxBind="Text Article.Content"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/sources"
+            android:fontFamily="@font/georgia"
+            android:textSize="16sp"
+            android:layout_margin="4dp"
+            android:layout_marginTop="8dp"
+            android:lineSpacingMultiplier="1"
+            android:lineSpacingExtra="8dp"
+            app:MvxBind="Text Source"/>
+    </LinearLayout>
+</ScrollView>
+

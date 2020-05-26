@@ -77,7 +77,7 @@ namespace TrueNewsFeeder.Core.ViewModels
                , AppSettingsManager.Settings["Service"]
                , AppSettingsManager.Settings["Language"]
                , AppSettingsManager.Settings["AppSecret"]);
-            var articles = await _service.GetNewsArticle(request);
+            var articles = await _service.GetNewsArticles(request);
 
             if (articles == null)
             {
@@ -90,7 +90,7 @@ namespace TrueNewsFeeder.Core.ViewModels
         // Todo: More Functional Programming Here!
         private async Task GetNewsArticleAsync()
         {
-            var articles = await _service.GetNewsArticle();
+            var articles = await _service.GetNewsArticles();
             Articles.AddRange(articles);
         }
     }

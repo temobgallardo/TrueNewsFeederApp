@@ -22,12 +22,12 @@ namespace TrueNewsFeeder.Repositories.Services.Implementation
             throw new NotImplementedException();
         }
 
-        public Task<IList<Article>> GetNewsArticle()
+        public Task<IList<Article>> GetNewsArticles()
         {
             throw new NotImplementedException();
         }
 
-        public Task<IList<Article>> GetNewsArticle(string request)
+        public Task<IList<Article>> GetNewsArticles(string request)
         {
             throw new NotImplementedException();
         }

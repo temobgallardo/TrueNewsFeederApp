@@ -9,8 +9,9 @@ namespace TrueNewsFeeder.Models.NewsApi
         public string Details { get; set; }
         public string UrlToImage { get; set; }
         public string Content { get; set; }
-        public List<string> Urls { get; set; }
-        public DateTime PublishAtStart { get; set; }
+        public string Source { get; set; }
+        public string Url { get; set; }
+        public DateTime PublishAt { get; set; }
         public DateTime PublishAtEnd { get; set; }
     }
 }

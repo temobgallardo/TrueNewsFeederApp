@@ -63,7 +63,7 @@ namespace TrueNewsFeeder.Repositories.Services.Implemantation
             return default;
         }
 
-        public async Task<IList<Article>> GetNewsArticle()
+        public async Task<IList<Article>> GetNewsArticles()
         {
             try
             {
@@ -102,7 +102,7 @@ namespace TrueNewsFeeder.Repositories.Services.Implemantation
             return default;
         }
 
-        public async Task<IList<Article>> GetNewsArticle(string sourcesRequest)
+        public async Task<IList<Article>> GetNewsArticles(string sourcesRequest)
         {
             try
             {
