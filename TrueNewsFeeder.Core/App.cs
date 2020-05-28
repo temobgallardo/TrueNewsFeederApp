@@ -19,6 +19,7 @@ namespace TrueNewsFeeder.Core
             // Mock _service
             //Mvx.IoCProvider.LazyConstructAndRegisterSingleton<IService, NewServiceConsumerMock>();
             Mvx.IoCProvider.LazyConstructAndRegisterSingleton<IUniversalNewsService, NewsServiceConsumer>();
+            //Mvx.IoCProvider.LazyConstructAndRegisterSingleton<NewsBaseFactoryService, NewsApiNewsFactoryServiceImp>();
             RegisterAppStart<TrueNewsViewModel>();
         }
     }
