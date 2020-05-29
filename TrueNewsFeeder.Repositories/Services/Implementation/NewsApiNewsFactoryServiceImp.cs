@@ -84,12 +84,12 @@ namespace TrueNewsFeeder.Repositories.Services.Implementation
             return new UniversalNewsEntity
             {
                 Title = jElement.GetProperty("title").GetString(),
-                Details = jElement.GetProperty("description").GetString(),
+                Description = jElement.GetProperty("description").GetString(),
                 UrlToImage = jElement.GetProperty("urlToImage").ToString(),
                 Content = jElement.GetProperty("content").ToString(),
                 Source = jElement.GetProperty("source").GetProperty("name").ToString(),
                 Url = jElement.GetProperty("url").ToString(),
-                PublishAt = jElement.GetProperty("publishedAt").GetDateTime()
+                PublishedAt = jElement.GetProperty("publishedAt").GetDateTime()
             };
         }
 

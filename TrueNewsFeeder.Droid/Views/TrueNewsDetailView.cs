@@ -17,7 +17,7 @@ namespace TrueNewsFeeder.Droid.Views
             SetContentView(Resource.Layout.true_news_detail);
             SupportActionBar.Title = GetText(Resource.String.screen_detail_title);
             SupportActionBar.SetDisplayHomeAsUpEnabled(true);
-            ViewModel.Article.Source.Name = GetString(Resource.String.sources, ViewModel.Article.Source.Name);
+            ViewModel.Article.Source = GetString(Resource.String.sources, ViewModel.Article.Source);
         }
 
         public override bool OnOptionsItemSelected(IMenuItem item)

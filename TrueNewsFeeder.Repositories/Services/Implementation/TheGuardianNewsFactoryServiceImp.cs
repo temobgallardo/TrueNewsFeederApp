@@ -1,22 +1,18 @@
-﻿using Newtonsoft.Json;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Net.Http;
 using System.Text.Json;
-using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 using TrueNewsFeeder.Models.NewsApi;
-using TrueNewsFeeder.Repositories.Services.Interfaces;
+using TrueNewsFeeder.Repositories.Services.Implementation;
 using TrueNewsFeeder.Shared;
 
 namespace TrueNewsFeeder.Repositories.Services.Implemantation
 {
-    public class TheGuardianNewsFactoryServiceImp : INewsFactoryService
+    public class TheGuardianNewsFactoryServiceImp : NewsBaseFactoryService
     {
-        private readonly HttpClient _httpClient = new HttpClient();
-
-        public async Task<IList<UniversalNewsEntity>> GetNewsArticlesAsync()
+        public override async Task<IList<UniversalNewsEntity>> GetNewsArticlesAsync()
         {
             var requestPlaceHolder = AppSettingsManager.Settings["TheGuardianUriPlaceHolder"];
             var request = string.Format(requestPlaceHolder
@@ -27,7 +23,7 @@ namespace TrueNewsFeeder.Repositories.Services.Implemantation
             return await GetNewsArticlesAsync(request);
         }
 
-        public async Task<IList<UniversalNewsEntity>> GetNewsArticlesAsync(string request)
+        public override async Task<IList<UniversalNewsEntity>> GetNewsArticlesAsync(string request)
         {
 
             var content = await GetNewsArticlesStreamAsync(request);
@@ -35,7 +31,7 @@ namespace TrueNewsFeeder.Repositories.Services.Implemantation
             return await ParseNewsStreamToEntitiesAsync(content);
         }
 
-        public async Task<Stream> GetNewsArticlesStreamAsync(string request)
+        public override async Task<Stream> GetNewsArticlesStreamAsync(string request)
         {
             var response = await _httpClient.GetAsync(request);
 
@@ -47,7 +43,7 @@ namespace TrueNewsFeeder.Repositories.Services.Implemantation
             return await response.Content.ReadAsStreamAsync();
         }
 
-        public UniversalNewsEntity ParseJsonElementToEntity(JsonElement jElement)
+        public override UniversalNewsEntity ParseJsonElementToEntity(JsonElement jElement)
         {
             jElement.GetProperty("blocks").TryGetProperty("body", out JsonElement body);
             var contentBody = body.EnumerateArray().FirstOrDefault().GetProperty("bodyTextSummary").GetString();
@@ -55,16 +51,16 @@ namespace TrueNewsFeeder.Repositories.Services.Implemantation
             return new UniversalNewsEntity
             {
                 Title = jElement.GetProperty("webTitle").GetString(),
-                Details = contentBody.ToString().Substring(0, 253) + "...",
+                Description = contentBody.ToString().Substring(0, 253) + "...",
                 UrlToImage = jElement.GetProperty("fields").GetProperty("thumbnail").ToString(),
                 Content = contentBody,
                 Source = "The Guardian",
                 Url = jElement.GetProperty("apiUrl").ToString(),
-                PublishAt = jElement.GetProperty("webPublicationDate").GetDateTime()
+                PublishedAt = jElement.GetProperty("webPublicationDate").GetDateTime()
             };
         }
 
-        public async Task<IList<UniversalNewsEntity>> ParseNewsStreamToEntitiesAsync(Stream newsStream)
+        public override async Task<IList<UniversalNewsEntity>> ParseNewsStreamToEntitiesAsync(Stream newsStream)
         {
             var universalNewsEntities = new List<UniversalNewsEntity>();
             /*From C# 8.0 and higher we can do in-line 'using' keyword**/

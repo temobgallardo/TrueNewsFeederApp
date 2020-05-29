@@ -90,12 +90,12 @@ namespace TrueNewsFeeder.UnitTest
                 var news = new UniversalNewsEntity
                 {
                     Title = title.GetString(),
-                    Details = contentBody.ToString().Substring(0, 253) + "...",
+                    Description = contentBody.ToString().Substring(0, 253) + "...",
                     UrlToImage = urlToImage.ToString(),
                     Content = contentBody.ToString(),
                     Source = "The Guardian",
                     Url = url.ToString(),
-                    PublishAt = webPublicationDate.GetDateTime()
+                    PublishedAt = webPublicationDate.GetDateTime()
                 };
                 universalNewsEntities.Add(news);
             }
@@ -127,12 +127,12 @@ namespace TrueNewsFeeder.UnitTest
                 var news = new UniversalNewsEntity
                 {
                     Title = r.GetProperty("webTitle").GetString(),
-                    Details = contentBody.ToString().Substring(0, 253) + "...",
+                    Description = contentBody.ToString().Substring(0, 253) + "...",
                     UrlToImage = r.GetProperty("fields").GetProperty("thumbnail").ToString(),
                     Content = contentBody,
                     Source = "The Guardian",
                     Url = r.GetProperty("apiUrl").ToString(),
-                    PublishAt = r.GetProperty("webPublicationDate").GetDateTime()
+                    PublishedAt = r.GetProperty("webPublicationDate").GetDateTime()
                 };
                 universalNewsEntities.Add(news);
             }

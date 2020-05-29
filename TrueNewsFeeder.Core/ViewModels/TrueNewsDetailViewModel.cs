@@ -8,13 +8,13 @@ using TrueNewsFeeder.Shared;
 
 namespace TrueNewsFeeder.Core.ViewModels
 {
-    public class TrueNewsDetailViewModel : BaseViewModel, IMvxViewModel<Article>
+    public class TrueNewsDetailViewModel : BaseViewModel, IMvxViewModel<UniversalNewsEntity>
     {
-        private Article _article;
+        private UniversalNewsEntity _article;
         private string _sources;
         private string _publishedAt;
 
-        public Article Article
+        public UniversalNewsEntity Article
         {
             get => _article;
             set => SetProperty(ref _article, value);
@@ -40,13 +40,13 @@ namespace TrueNewsFeeder.Core.ViewModels
             await _navigationService.Close(this);
         }
 
-        public void Prepare(Article article)
+        public void Prepare(UniversalNewsEntity article)
         {
             _article = article;
             _publishedAt = article.PublishedAt.ToString("MMM dd, yyyy hh:mm tt");
-            var cleanSource = article.Source.Name.Replace("Sources", string.Empty).Replace(Environment.NewLine, string.Empty);
+            var cleanSource = article.Source.Replace("Sources", string.Empty).Replace(Environment.NewLine, string.Empty);
             var citation = string.Format(AppSettingsManager.Settings["ApaCitationPlaceHolder"]
-                , article.Author
+                , article.Source
                 , article.PublishedAt.ToString("yyyy, MMMM dd")
                 , article.Title
                 , cleanSource
