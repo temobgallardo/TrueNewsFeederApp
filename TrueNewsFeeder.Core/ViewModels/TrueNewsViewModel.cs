@@ -1,20 +1,19 @@
 ﻿using MvvmCross.Commands;
 using MvvmCross.Navigation;
 using MvvmCross.ViewModels;
-using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using TrueNewsFeeder.Models;
+using TrueNewsFeeder.Models.Guardian;
 using TrueNewsFeeder.Models.NewsApi;
 using TrueNewsFeeder.Repositories.Services.Implementation;
-using TrueNewsFeeder.Repositories.Services.Interfaces;
-using TrueNewsFeeder.Shared;
 
 namespace TrueNewsFeeder.Core.ViewModels
 {
     public class TrueNewsViewModel : BaseViewModel
     {
-        private readonly NewsBaseFactoryService _service;
+        private readonly BaseNewsFactoryService<News> _service;
 
         public MvxObservableCollection<UniversalNewsEntity> Articles { get; private set; }
         public MvxObservableCollection<UniversalNewsEntity> CachedArticles { get; private set; }
@@ -22,7 +21,7 @@ namespace TrueNewsFeeder.Core.ViewModels
         public IMvxAsyncCommand<UniversalNewsEntity> OnTrueNewsRowSelectedCommand { get; private set; }
         public IMvxAsyncCommand GetNewsCommandAsync { get; private set; }
 
-        public TrueNewsViewModel(IMvxNavigationService mvxNavigationService, NewsBaseFactoryService serviceApi) : base(mvxNavigationService)
+        public TrueNewsViewModel(IMvxNavigationService mvxNavigationService, BaseNewsFactoryService<News> serviceApi) : base(mvxNavigationService)
         {
             _service = serviceApi;
             Articles = new MvxObservableCollection<UniversalNewsEntity>();

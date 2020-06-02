@@ -4,7 +4,7 @@ using TrueNewsFeeder.Repositories.Services.Implemantation;
 using TrueNewsFeeder.Shared;
 using Xunit;
 
-namespace TrueNewsFeeder.UnitTest
+namespace TrueNewsFeeder.UnitTest.Repositories
 {
     public class NewsServiceConsumerUnitTest
     {

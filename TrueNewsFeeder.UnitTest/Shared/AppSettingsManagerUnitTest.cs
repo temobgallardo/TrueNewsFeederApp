@@ -2,7 +2,7 @@ using System;
 using TrueNewsFeeder.Shared;
 using Xunit;
 
-namespace TrueNewsFeeder.UnitTest
+namespace TrueNewsFeeder.UnitTest.Shared
 {
     public class AppSettingsManagerUnitTest
     {

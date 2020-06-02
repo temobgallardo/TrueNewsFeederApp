@@ -1,17 +1,15 @@
 ﻿using System.Collections.Generic;
-using System.IO;
-using System.Text.Json;
 using System.Threading.Tasks;
-using TrueNewsFeeder.Models.NewsApi;
+using TrueNewsFeeder.Models;
 
 namespace TrueNewsFeeder.Repositories.Services.Interfaces
 {
-    interface INewsFactoryService
+    public interface INewsFactoryService<T> where T: class, new()
     {
         Task<IList<UniversalNewsEntity>> GetNewsArticlesAsync();
         Task<IList<UniversalNewsEntity>> GetNewsArticlesAsync(string request);
-        Task<Stream> GetNewsArticlesStreamAsync(string request);
-        Task<IList<UniversalNewsEntity>> ParseNewsStreamToEntitiesAsync(Stream newsStream);
-        UniversalNewsEntity ParseJsonElementToEntity(JsonElement jElement);
+        Task<string> GetNewsJsonStringAsync(string request);
+        T GetLocalNewsTypeData(string newsJson);
+        IList<UniversalNewsEntity> ParseTNewsToEntities(T news); 
     }
 }

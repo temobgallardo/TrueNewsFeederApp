@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace TrueNewsFeeder.Models.NewsApi
+namespace TrueNewsFeeder.Models
 {
     public class UniversalNewsEntity
     {

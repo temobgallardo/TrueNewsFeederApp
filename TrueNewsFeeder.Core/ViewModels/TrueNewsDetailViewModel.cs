@@ -3,7 +3,7 @@ using MvvmCross.Navigation;
 using MvvmCross.ViewModels;
 using System;
 using System.Threading.Tasks;
-using TrueNewsFeeder.Models.NewsApi;
+using TrueNewsFeeder.Models;
 using TrueNewsFeeder.Shared;
 
 namespace TrueNewsFeeder.Core.ViewModels

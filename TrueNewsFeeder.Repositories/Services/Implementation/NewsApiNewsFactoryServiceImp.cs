@@ -1,18 +1,22 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
-using System.IO;
-using System.Text.Json;
+using System.Linq;
 using System.Threading.Tasks;
+using TrueNewsFeeder.Models;
+using TrueNewsFeeder.Models.Guardian;
 using TrueNewsFeeder.Models.NewsApi;
 using TrueNewsFeeder.Shared;
 
 namespace TrueNewsFeeder.Repositories.Services.Implementation
 {
-    public class NewsApiNewsFactoryServiceImp : NewsBaseFactoryService
+    public class NewsApiNewsFactoryServiceImp : BaseNewsFactoryService<News>
     {
+        private new readonly string tag = typeof(NewsApiNewsFactoryServiceImp).Name;
+
         public override async Task<IList<UniversalNewsEntity>> GetNewsArticlesAsync()
         {
-            var request = string.Format(AppSettingsManager.Settings["UriHolderBySources"]
+            var sourceRequest = string.Format(AppSettingsManager.Settings["UriHolderBySources"]
                     , AppSettingsManager.Settings["Service"]
                     , AppSettingsManager.Settings["Language"]
                     , AppSettingsManager.Settings["AppSecret"]);
@@ -26,112 +30,57 @@ namespace TrueNewsFeeder.Repositories.Services.Implementation
 
             try
             {
-                var sourcesRespond = await _httpClient.GetAsync(request);
+                var sources = await GetNewsSourcesAsync(sourceRequest);
 
-                if (!sourcesRespond.IsSuccessStatusCode)
+                /*Retrieving the first item so we do not burn out the API call limit on our Development Key**/
+#if DEBUG
+                string firstSource = sources.Sources.FirstOrDefault().Id;
+                var newsRequest = string.Format(newsRequestPlaceHolder, firstSource);
+                var news = await GetNewsArticlesAsync(newsRequest);
+                allNews.AddRange(news);
+#else
+                     foreach (var s in sources.Sources)
                 {
-                    return default;
-                }
-
-                var sourcesStream = await sourcesRespond.Content.ReadAsStreamAsync();
-                var sources = await ParseSourcesStreamToEntitiesAsync(sourcesStream);
-                foreach (var s in sources)
-                {
-                    var newsRequest = string.Format(newsRequestPlaceHolder, s);
+                    var newsRequest = string.Format(newsRequestPlaceHolder, s.Id);
                     var news = await GetNewsArticlesAsync(newsRequest);
                     allNews.AddRange(news);
                 }
-
+#endif
                 return allNews;
             }
             catch (Exception e)
             {
+                throw new Exception(tag, e);
             }
-
-            return default;
         }
 
-        public override async Task<IList<UniversalNewsEntity>> GetNewsArticlesAsync(string request)
+        private async Task<News> GetNewsSourcesAsync(string request)
         {
             try
             {
-                var newsStream = await GetNewsArticlesStreamAsync(request);
+                var sources = await GetNewsJsonStringAsync(request);
 
-                return await ParseNewsStreamToEntitiesAsync(newsStream);
+                return JsonConvert.DeserializeObject<News>(sources);
             }
             catch (Exception e)
             {
-
+                throw new Exception(tag, e);
             }
-
-            return default;
         }
 
-        public override async Task<Stream> GetNewsArticlesStreamAsync(string request)
+        public override IList<UniversalNewsEntity> ParseTNewsToEntities(News news)
         {
-            var response = await _httpClient.GetAsync(request);
+            var uNewsEntity = news.Articles.Select(article => new UniversalNewsEntity { 
+                Content = article.Content,
+                Description = article.Description,
+                PublishedAt = article.PublishedAt,
+                Source = article.Source.Name,
+                Title = article.Title,
+                Url = article.Url,
+                UrlToImage = article.UrlToImage
+            });
 
-            if (!response.IsSuccessStatusCode)
-            {
-                return default;
-            }
-
-            return await response.Content.ReadAsStreamAsync();
-        }
-
-        public override UniversalNewsEntity ParseJsonElementToEntity(JsonElement jElement)
-        {
-            return new UniversalNewsEntity
-            {
-                Title = jElement.GetProperty("title").GetString(),
-                Description = jElement.GetProperty("description").GetString(),
-                UrlToImage = jElement.GetProperty("urlToImage").ToString(),
-                Content = jElement.GetProperty("content").ToString(),
-                Source = jElement.GetProperty("source").GetProperty("name").ToString(),
-                Url = jElement.GetProperty("url").ToString(),
-                PublishedAt = jElement.GetProperty("publishedAt").GetDateTime()
-            };
-        }
-
-        public override async Task<IList<UniversalNewsEntity>> ParseNewsStreamToEntitiesAsync(Stream newsStream)
-        {
-            var universalNewsEntities = new List<UniversalNewsEntity>();
-            /*From C# 8.0 and higher we can do in-line 'using' keyword**/
-            using (var jsonDoc = await JsonDocument.ParseAsync(newsStream))
-            {
-                /*First, we get the root element from the JsonDocument**/
-                JsonElement root = jsonDoc.RootElement;
-                JsonElement results = root.GetProperty("articles");
-                foreach (var r in results.EnumerateArray())
-                {
-                    universalNewsEntities.Add(ParseJsonElementToEntity(r));
-                }
-            }
-
-            return universalNewsEntities;
-        }
-
-        public string ParseJsonElementToEntityLocal(JsonElement jElement)
-        {
-            return jElement.GetProperty("id").GetString();
-        }
-
-        public async Task<IList<string>> ParseSourcesStreamToEntitiesAsync(Stream newsStream)
-        {
-            var sources = new List<string>();
-            /*From C# 8.0 and higher we can do in-line 'using' keyword**/
-            using (var jsonDoc = await JsonDocument.ParseAsync(newsStream))
-            {
-                /*First, we get the root element from the JsonDocument**/
-                JsonElement root = jsonDoc.RootElement;
-                JsonElement results = root.GetProperty("sources");
-                foreach (var r in results.EnumerateArray())
-                {
-                    sources.Add(ParseJsonElementToEntityLocal(r));
-                }
-            }
-
-            return sources;
+            return uNewsEntity.ToList();
         }
     }
 }
