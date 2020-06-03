@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using TrueNewsFeeder.Models;
@@ -34,7 +35,7 @@ namespace TrueNewsFeeder.Repositories.Services.Implementation
                 }
                 catch (Exception ex)
                 {
-                    //log which source fails
+                    Debug.WriteLine($"Failing on getting source from {newsfeedSource.GetType().Name}, message : {ex.Message}");
                 }
             }
             return newfeeds;

@@ -24,7 +24,7 @@ namespace TrueNewsFeeder.Repositories.Services.Implemantation
 
         public async Task<IList<UniversalNewsEntity>> GetNewsfeedAsync()
         {
-            return await GetNewsArticlesAsync();
+           return await GetNewsArticlesAsync();
         }
 
         public override IList<UniversalNewsEntity> ParseTNewsToEntities(TheGuardianNewsResponse news) 
