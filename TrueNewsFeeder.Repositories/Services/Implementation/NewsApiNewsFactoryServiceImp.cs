@@ -39,7 +39,7 @@ namespace TrueNewsFeeder.Repositories.Services.Implementation
                 var news = await GetNewsArticlesAsync(newsRequest);
                 allNews.AddRange(news);
 #else
-                     foreach (var s in sources.Sources)
+                foreach (var s in sources.Sources)
                 {
                     var newsRequest = string.Format(newsRequestPlaceHolder, s.Id);
                     var news = await GetNewsArticlesAsync(newsRequest);
@@ -70,7 +70,8 @@ namespace TrueNewsFeeder.Repositories.Services.Implementation
 
         public override IList<UniversalNewsEntity> ParseTNewsToEntities(News news)
         {
-            var uNewsEntity = news.Articles.Select(article => new UniversalNewsEntity { 
+            var uNewsEntity = news.Articles.Select(article => new UniversalNewsEntity
+            {
                 Content = article.Content,
                 Description = article.Description,
                 PublishedAt = article.PublishedAt,

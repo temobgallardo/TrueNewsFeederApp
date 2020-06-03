@@ -39,7 +39,7 @@ namespace TrueNewsFeeder.Core.ViewModels
         private void FilterNewsByTitle(string toSearch)
         {
             /**
-             * CachedArticles was initialized in ViewAppearing()
+             * CachedArticles was initialized in Initialize()
              */
             if (string.IsNullOrEmpty(toSearch))
             {
