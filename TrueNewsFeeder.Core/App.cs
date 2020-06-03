@@ -4,6 +4,7 @@ using MvvmCross.ViewModels;
 using TrueNewsFeeder.Core.ViewModels;
 using TrueNewsFeeder.Models.NewsApi;
 using TrueNewsFeeder.Repositories.Services.Implementation;
+using TrueNewsFeeder.Repositories.Services.Interfaces;
 
 namespace TrueNewsFeeder.Core
 {
@@ -19,7 +20,9 @@ namespace TrueNewsFeeder.Core
             // Mock _service
             //Mvx.IoCProvider.LazyConstructAndRegisterSingleton<IService, NewServiceConsumerMock>();
             //Mvx.IoCProvider.LazyConstructAndRegisterSingleton<IUniversalNewsService, NewsServiceConsumer>();
-            Mvx.IoCProvider.LazyConstructAndRegisterSingleton<BaseNewsFactoryService<News>, NewsApiNewsFactoryServiceImp>();
+            //Mvx.IoCProvider.LazyConstructAndRegisterSingleton<BaseNewsFactoryService<News>, NewsApiNewsFactoryServiceImp>();
+            //Mvx.IoCProvider.LazyConstructAndRegisterSingleton<INewsfeed, NewsfeedManager>();
+            Mvx.IoCProvider.LazyConstructAndRegisterSingleton<INewsfeedManager, NewsfeedManager>();
             RegisterAppStart<TrueNewsViewModel>();
         }
     }

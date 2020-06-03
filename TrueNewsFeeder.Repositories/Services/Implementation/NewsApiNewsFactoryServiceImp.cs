@@ -4,13 +4,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using TrueNewsFeeder.Models;
-using TrueNewsFeeder.Models.Guardian;
 using TrueNewsFeeder.Models.NewsApi;
+using TrueNewsFeeder.Repositories.Services.Interfaces;
 using TrueNewsFeeder.Shared;
 
 namespace TrueNewsFeeder.Repositories.Services.Implementation
 {
-    public class NewsApiNewsFactoryServiceImp : BaseNewsFactoryService<News>
+    public class NewsApiNewsFactoryServiceImp : BaseNewsFactoryService<News>, INewsfeed
     {
         private new readonly string tag = typeof(NewsApiNewsFactoryServiceImp).Name;
 
@@ -82,6 +82,11 @@ namespace TrueNewsFeeder.Repositories.Services.Implementation
             });
 
             return uNewsEntity.ToList();
+        }
+
+        public async Task<IList<UniversalNewsEntity>> GetNewsfeedAsync()
+        {
+            return await GetNewsArticlesAsync();
         }
     }
 }

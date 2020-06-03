@@ -4,11 +4,12 @@ using System.Threading.Tasks;
 using TrueNewsFeeder.Models;
 using TrueNewsFeeder.Models.Guardian;
 using TrueNewsFeeder.Repositories.Services.Implementation;
+using TrueNewsFeeder.Repositories.Services.Interfaces;
 using TrueNewsFeeder.Shared;
 
 namespace TrueNewsFeeder.Repositories.Services.Implemantation
 {
-    public class TheGuardianNewsFactoryServiceImp : BaseNewsFactoryService<TheGuardianNewsResponse>
+    public class TheGuardianNewsFactoryServiceImp : BaseNewsFactoryService<TheGuardianNewsResponse>, INewsfeed
     {
         public override async Task<IList<UniversalNewsEntity>> GetNewsArticlesAsync()
         {
@@ -19,6 +20,11 @@ namespace TrueNewsFeeder.Repositories.Services.Implemantation
                 , AppSettingsManager.Settings["TheGuardianApiSecret"]);
 
             return await GetNewsArticlesAsync(request);
+        }
+
+        public async Task<IList<UniversalNewsEntity>> GetNewsfeedAsync()
+        {
+            return await GetNewsArticlesAsync();
         }
 
         public override IList<UniversalNewsEntity> ParseTNewsToEntities(TheGuardianNewsResponse news) 
