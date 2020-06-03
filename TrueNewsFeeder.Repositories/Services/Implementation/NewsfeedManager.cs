@@ -15,8 +15,8 @@ namespace TrueNewsFeeder.Repositories.Services.Implementation
         public NewsfeedManager()
         {
             //initilize
-            Add(new TheGuardianNewsFactoryServiceImp());
-            Add(new NewsApiNewsFactoryServiceImp());
+            //Add(new TheGuardianNewsFactoryServiceImp());
+            //Add(new NewsApiNewsFactoryServiceImp());
         }
 
         public async Task<IList<UniversalNewsEntity>> GetNewsfeedAsync()

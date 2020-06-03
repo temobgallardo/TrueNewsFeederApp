@@ -23,6 +23,7 @@ namespace TrueNewsFeeder.Core
             //Mvx.IoCProvider.LazyConstructAndRegisterSingleton<BaseNewsFactoryService<News>, NewsApiNewsFactoryServiceImp>();
             //Mvx.IoCProvider.LazyConstructAndRegisterSingleton<INewsfeed, NewsfeedManager>();
             Mvx.IoCProvider.LazyConstructAndRegisterSingleton<INewsfeedManager, NewsfeedManager>();
+            Mvx.IoCProvider.LazyConstructAndRegisterSingleton<INewsfeedFactory, NewsfeedFactory>(); 
             RegisterAppStart<TrueNewsViewModel>();
         }
     }

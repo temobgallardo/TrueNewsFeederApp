@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using TrueNewsFeeder.Models;
+using TrueNewsFeeder.Repositories.Services.Implementation;
 using TrueNewsFeeder.Repositories.Services.Interfaces;
 
 namespace TrueNewsFeeder.Core.ViewModels
@@ -12,6 +13,7 @@ namespace TrueNewsFeeder.Core.ViewModels
     public class TrueNewsViewModel : BaseViewModel
     {
         private readonly INewsfeedManager _newsRepository;
+        private readonly INewsfeedFactory _newsfeedFactory;
 
         public MvxObservableCollection<UniversalNewsEntity> Articles { get; private set; }
         public MvxObservableCollection<UniversalNewsEntity> CachedArticles { get; private set; }
@@ -19,8 +21,11 @@ namespace TrueNewsFeeder.Core.ViewModels
         public IMvxAsyncCommand<UniversalNewsEntity> OnTrueNewsRowSelectedCommand { get; private set; }
         public IMvxAsyncCommand GetNewsCommandAsync { get; private set; }
 
-        public TrueNewsViewModel(IMvxNavigationService mvxNavigationService, INewsfeedManager newsRepository) : base(mvxNavigationService)
+        public TrueNewsViewModel(IMvxNavigationService mvxNavigationService,
+            INewsfeedManager newsRepository,
+            INewsfeedFactory newsfeedFactory) : base(mvxNavigationService)
         {
+            _newsfeedFactory = newsfeedFactory;
             _newsRepository = newsRepository;
             Articles = new MvxObservableCollection<UniversalNewsEntity>();
             CachedArticles = new MvxObservableCollection<UniversalNewsEntity>();
@@ -28,8 +33,9 @@ namespace TrueNewsFeeder.Core.ViewModels
             FilterNewsCommandAsync = new MvxCommand<string>(FilterNewsByTitle);
             OnTrueNewsRowSelectedCommand = new MvxAsyncCommand<UniversalNewsEntity>(LeapToTrueNewsDetailViewModel);
 
-            //add sources
-            newsRepository.Add(new TheGuardianNewsFactoryServiceImp());
+            _newsRepository.Add(_newsfeedFactory.GetNewsfeed(NewsfeedFactorySource.Guardian));
+            _newsRepository.Add(_newsfeedFactory.GetNewsfeed(NewsfeedFactorySource.NewsAPI));
+
         }
 
         private async Task LeapToTrueNewsDetailViewModel(UniversalNewsEntity article)
