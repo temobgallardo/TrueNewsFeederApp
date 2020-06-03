@@ -5,6 +5,7 @@ namespace TrueNewsFeeder.Repositories.Services.Interfaces
     {
         void Add(INewsfeed source);
         void Remove(INewsfeed source);
+        void Clear();
     }
 
     public interface INewsfeedManager : INewsfeedSourceManager, INewsfeed

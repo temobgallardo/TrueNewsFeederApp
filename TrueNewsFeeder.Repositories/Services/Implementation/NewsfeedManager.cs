@@ -15,6 +15,7 @@ namespace TrueNewsFeeder.Repositories.Services.Implementation
 
         public NewsfeedManager()
         {
+            _sources = new List<INewsfeed>();
             //initilize
             //Add(new TheGuardianNewsFactoryServiceImp());
             //Add(new NewsApiNewsFactoryServiceImp());
@@ -43,17 +44,17 @@ namespace TrueNewsFeeder.Repositories.Services.Implementation
 
         public void Add(INewsfeed source)
         {
-            if (_sources == null)
-            {
-                _sources = new List<INewsfeed>();
-            }
-
-            _sources.Add(source);
+            _sources?.Add(source);
         }
 
         public void Remove(INewsfeed source)
         {
             _sources?.Remove(source);
+        }
+
+        public void Clear()
+        {
+            _sources?.Clear();
         }
     }
 }
