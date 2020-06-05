@@ -2,7 +2,6 @@
 using System;
 using System.Linq;
 using System.Net.Http;
-using System.Text.Json;
 using System.Threading.Tasks;
 using TrueNewsFeeder.Models.NewsApi;
 using TrueNewsFeeder.Repositories.Services.Implementation;
@@ -14,7 +13,7 @@ namespace TrueNewsFeeder.UnitTest.Repositories
     public class NewsApiNewsFactoryServiceImpUnitTest
     {
         private readonly HttpClient _httpClient = new HttpClient();
-        private NewsApiNewsFactoryServiceImp _instance = new NewsApiNewsFactoryServiceImp();
+        private NewsApiNewsRepositoryFactoryImp _instance = new NewsApiNewsRepositoryFactoryImp();
 
         public async Task<string> GetNewsJsonStringAsync(string request)
         {

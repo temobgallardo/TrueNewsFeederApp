@@ -3,7 +3,6 @@ using MvvmCross.Core.ViewModels;
 using MvvmCross.Core.Views;
 using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace TrueNewsFeeder.UnitTest.ViewModels
 {

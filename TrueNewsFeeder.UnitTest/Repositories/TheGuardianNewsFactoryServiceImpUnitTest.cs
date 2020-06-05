@@ -1,8 +1,5 @@
-﻿using System.Collections.Generic;
-using System.IO;
-using System.Linq;
+﻿using System.IO;
 using System.Net.Http;
-using System.Text.Json;
 using System.Threading.Tasks;
 using TrueNewsFeeder.Repositories.Services.Implemantation;
 using TrueNewsFeeder.Shared;
@@ -51,7 +48,7 @@ namespace TrueNewsFeeder.UnitTest.Repositories
         [Fact]
         public async Task ShouldGetNewsArticlesAsync()
         {
-            var product = new TheGuardianNewsFactoryServiceImp();
+            var product = new TheGuardianNewsRepositoryFactoryImp();
             var result = await product.GetNewsArticlesAsync();
             Xunit.Assert.NotNull(result);
             Xunit.Assert.NotEmpty(result);
@@ -59,7 +56,7 @@ namespace TrueNewsFeeder.UnitTest.Repositories
         [Fact]
         public async Task ShouldGetNewsArticlesAsyncWithArg()
         {
-            var product = new TheGuardianNewsFactoryServiceImp();
+            var product = new TheGuardianNewsRepositoryFactoryImp();
 
             var requestPlaceHolder = AppSettingsManager.Settings["TheGuardianUriPlaceHolder"];
             var request = string.Format(requestPlaceHolder
@@ -74,7 +71,7 @@ namespace TrueNewsFeeder.UnitTest.Repositories
         [Fact]
         public async Task ShouldGetNewsJsonStringAsync()
         {
-            var product = new TheGuardianNewsFactoryServiceImp();
+            var product = new TheGuardianNewsRepositoryFactoryImp();
 
             var requestPlaceHolder = AppSettingsManager.Settings["TheGuardianUriPlaceHolder"];
             var request = string.Format(requestPlaceHolder
@@ -88,7 +85,7 @@ namespace TrueNewsFeeder.UnitTest.Repositories
         [Fact]
         public async Task ShouldParseTNewsToEntities()
         {
-            var product = new TheGuardianNewsFactoryServiceImp();
+            var product = new TheGuardianNewsRepositoryFactoryImp();
 
             var requestPlaceHolder = AppSettingsManager.Settings["TheGuardianUriPlaceHolder"];
             var request = string.Format(requestPlaceHolder

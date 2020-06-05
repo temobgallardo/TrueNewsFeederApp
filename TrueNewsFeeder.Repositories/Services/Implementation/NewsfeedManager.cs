@@ -4,31 +4,30 @@ using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using TrueNewsFeeder.Models;
-using TrueNewsFeeder.Repositories.Services.Implemantation;
 using TrueNewsFeeder.Repositories.Services.Interfaces;
 
 namespace TrueNewsFeeder.Repositories.Services.Implementation
 {
-    public class NewsfeedManager : INewsfeedManager
+    public class NewsFeedManager : INewsFeedManager
     {
-        private IList<INewsfeed> _sources;
+        private readonly IList<INewsFeedConnector> _sources;
 
-        public NewsfeedManager()
+        public NewsFeedManager()
         {
-            _sources = new List<INewsfeed>();
+            _sources = new List<INewsFeedConnector>();
             //initilize
-            //Add(new TheGuardianNewsFactoryServiceImp());
-            //Add(new NewsApiNewsFactoryServiceImp());
+            //Add(new TheGuardianNewsRepositoryFactoryImp());
+            //Add(new NewsApiNewsRepositoryFactoryImp());
         }
 
-        public async Task<IList<UniversalNewsEntity>> GetNewsfeedAsync()
+        public async Task<IList<UniversalNewsEntity>> GetNewsFeedAsync()
         {
             var newfeeds = new List<UniversalNewsEntity>();
-            foreach (INewsfeed newsfeedSource in _sources)
+            foreach (INewsFeedConnector newsfeedSource in _sources)
             {
                 try
                 {
-                    var newsEntities = await newsfeedSource.GetNewsfeedAsync();
+                    var newsEntities = await newsfeedSource.GetNewsFeedAsync();
                     if (newsEntities != null && newsEntities.Any())
                     {
                         newfeeds.AddRange(newsEntities);
@@ -42,12 +41,12 @@ namespace TrueNewsFeeder.Repositories.Services.Implementation
             return newfeeds;
         }
 
-        public void Add(INewsfeed source)
+        public void Add(INewsFeedConnector source)
         {
             _sources?.Add(source);
         }
 
-        public void Remove(INewsfeed source)
+        public void Remove(INewsFeedConnector source)
         {
             _sources?.Remove(source);
         }

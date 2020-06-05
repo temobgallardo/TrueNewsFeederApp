@@ -19,16 +19,20 @@
             android:layout_height="wrap_content"
             android:fontFamily="@font/georgiab"
             android:textSize="24sp"
-            android:padding="4dp"
+            android:paddingLeft="12dp"
+            android:paddingRight="12dp"
             android:layout_marginTop="8dp"
+            android:justificationMode="inter_word"
             app:MvxBind="Text Article.Title"/>
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:fontFamily="@font/georgia"
             android:textSize="14sp"
+            android:paddingLeft="12dp"
             android:layout_marginBottom="12dp"
             android:layout_marginLeft="4dp"
+            android:justificationMode="inter_word"
             app:MvxBind="Text PublishedAt"/>
         <TextView
             android:layout_width="match_parent"
@@ -39,7 +43,8 @@
             android:layout_marginBottom="8dp"
             android:lineSpacingMultiplier="1"
             android:lineSpacingExtra="8dp"
-            android:padding="4dp"
+            android:padding="12dp"
+            android:justificationMode="inter_word"
             app:MvxBind="Text Article.Content"/>
         <TextView
             android:layout_width="match_parent"
@@ -51,7 +56,8 @@
             android:layout_marginTop="8dp"
             android:lineSpacingMultiplier="1"
             android:lineSpacingExtra="8dp"
-            android:padding="4dp"
+            android:padding="12dp"
+            android:justificationMode="inter_word"
             app:MvxBind="Text Source"/>
     </LinearLayout>
 </ScrollView>

@@ -5,15 +5,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using TrueNewsFeeder.Models;
-using TrueNewsFeeder.Repositories.Services.Implementation;
 using TrueNewsFeeder.Repositories.Services.Interfaces;
 
 namespace TrueNewsFeeder.Core.ViewModels
 {
     public class TrueNewsViewModel : BaseViewModel
     {
-        private readonly INewsfeedManager _newsRepository;
-        private readonly INewsfeedFactory _newsfeedFactory;
+        private readonly INewsFeedManager _newsRepository;
+        private readonly INewsFeedRepositoriesFactory _newsfeedFactory;
 
         public MvxObservableCollection<UniversalNewsEntity> Articles { get; private set; }
         public MvxObservableCollection<UniversalNewsEntity> CachedArticles { get; private set; }
@@ -22,8 +21,8 @@ namespace TrueNewsFeeder.Core.ViewModels
         public IMvxAsyncCommand GetNewsCommandAsync { get; private set; }
 
         public TrueNewsViewModel(IMvxNavigationService mvxNavigationService,
-            INewsfeedManager newsRepository,
-            INewsfeedFactory newsfeedFactory) : base(mvxNavigationService)
+            INewsFeedManager newsRepository,
+            INewsFeedRepositoriesFactory newsfeedFactory) : base(mvxNavigationService)
         {
             _newsfeedFactory = newsfeedFactory;
             _newsRepository = newsRepository;
@@ -33,8 +32,8 @@ namespace TrueNewsFeeder.Core.ViewModels
             FilterNewsCommandAsync = new MvxCommand<string>(FilterNewsByTitle);
             OnTrueNewsRowSelectedCommand = new MvxAsyncCommand<UniversalNewsEntity>(LeapToTrueNewsDetailViewModel);
 
-            _newsRepository.Add(_newsfeedFactory.GetNewsfeed(NewsfeedFactorySource.Guardian));
-            _newsRepository.Add(_newsfeedFactory.GetNewsfeed(NewsfeedFactorySource.NewsAPI));
+            _newsRepository.Add(_newsfeedFactory.GetNewsFeed(ENewsFeedFactorySource.Guardian));
+            _newsRepository.Add(_newsfeedFactory.GetNewsFeed(ENewsFeedFactorySource.NewsAPI));
 
         }
 
@@ -83,7 +82,7 @@ namespace TrueNewsFeeder.Core.ViewModels
             //   , AppSettingsManager.Settings["Service"]
             //   , AppSettingsManager.Settings["Language"]
             //   , AppSettingsManager.Settings["AppSecret"]);
-            var articles = await _newsRepository.GetNewsfeedAsync();
+            var articles = await _newsRepository.GetNewsFeedAsync();
 
             if (articles == null)
             {
@@ -96,7 +95,7 @@ namespace TrueNewsFeeder.Core.ViewModels
         // Todo: More Functional Programming Here!
         private async Task GetNewsArticleAsync()
         {
-            var articles = await _newsRepository.GetNewsfeedAsync();
+            var articles = await _newsRepository.GetNewsFeedAsync();
             Articles.AddRange(articles);
         }
     }

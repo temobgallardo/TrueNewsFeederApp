@@ -53,8 +53,6 @@ namespace TrueNewsFeeder.Core.ViewModels
                 , article.Url);
             _sources = @"Sources: " + Environment.NewLine;
             _sources += citation;
-
-
         }
     }
 }

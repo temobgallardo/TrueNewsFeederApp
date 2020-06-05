@@ -10,9 +10,9 @@ using TrueNewsFeeder.Shared;
 
 namespace TrueNewsFeeder.Repositories.Services.Implementation
 {
-    public class NewsApiNewsFactoryServiceImp : BaseNewsFactoryService<News>, INewsfeed
+    public class NewsApiNewsRepositoryFactoryImp : BaseNewsRepositoryFactory<News>, INewsFeedConnector
     {
-        private new readonly string tag = typeof(NewsApiNewsFactoryServiceImp).Name;
+        private new readonly string tag = typeof(NewsApiNewsRepositoryFactoryImp).Name;
 
         public override async Task<IList<UniversalNewsEntity>> GetNewsArticlesAsync()
         {
@@ -84,7 +84,7 @@ namespace TrueNewsFeeder.Repositories.Services.Implementation
             return uNewsEntity.ToList();
         }
 
-        public async Task<IList<UniversalNewsEntity>> GetNewsfeedAsync()
+        public async Task<IList<UniversalNewsEntity>> GetNewsFeedAsync()
         {
             return await GetNewsArticlesAsync();
         }

@@ -5,8 +5,8 @@ using TrueNewsFeeder.Models;
 
 namespace TrueNewsFeeder.Repositories.Services.Interfaces
 {
-    public interface INewsfeed
+    public interface INewsFeedConnector
     {
-        Task<IList<UniversalNewsEntity>> GetNewsfeedAsync();
+        Task<IList<UniversalNewsEntity>> GetNewsFeedAsync();
     }
 }

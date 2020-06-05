@@ -1,4 +1,3 @@
-using System;
 using TrueNewsFeeder.Shared;
 using Xunit;
 

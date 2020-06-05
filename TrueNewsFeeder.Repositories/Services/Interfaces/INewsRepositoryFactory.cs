@@ -4,7 +4,7 @@ using TrueNewsFeeder.Models;
 
 namespace TrueNewsFeeder.Repositories.Services.Interfaces
 {
-    public interface INewsFactoryService<T> where T: class, new()
+    public interface INewsRepositoryFactory<T> where T: class, new()
     {
         Task<IList<UniversalNewsEntity>> GetNewsArticlesAsync();
         Task<IList<UniversalNewsEntity>> GetNewsArticlesAsync(string request);

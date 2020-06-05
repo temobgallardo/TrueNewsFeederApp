@@ -11,7 +11,7 @@ using TrueNewsFeeder.Shared;
 
 namespace TrueNewsFeeder.Repositories.Services.Implemantation
 {
-    public class NewsServiceConsumer : IUniversalNewsService, IService
+    public class NewsServiceConsumer : IUniversalNewsRepository, IService
     {
         private static readonly HttpClient _httpClient = new HttpClient();
 

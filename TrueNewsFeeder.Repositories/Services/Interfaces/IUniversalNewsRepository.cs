@@ -4,7 +4,7 @@ using TrueNewsFeeder.Models.NewsApi;
 
 namespace TrueNewsFeeder.Repositories.Services.Interfaces
 {
-    public interface IUniversalNewsService
+    public interface IUniversalNewsRepository
     {
         Task<News> GetNews(string request);
         Task<IList<Article>> GetNewsArticles();

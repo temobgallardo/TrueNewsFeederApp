@@ -8,10 +8,10 @@ using TrueNewsFeeder.Repositories.Services.Interfaces;
 
 namespace TrueNewsFeeder.Repositories.Services.Implementation
 {
-    public abstract class BaseNewsFactoryService<T> : INewsFactoryService<T> where T: class, new()
+    public abstract class BaseNewsRepositoryFactory<T> : INewsRepositoryFactory<T> where T: class, new()
     {
         protected readonly HttpClient _httpClient = new HttpClient();
-        protected string tag = typeof(BaseNewsFactoryService<T>).Name;
+        protected string tag = typeof(BaseNewsRepositoryFactory<T>).Name;
 
         public T GetLocalNewsTypeData(string news)
         {

@@ -9,7 +9,7 @@ using TrueNewsFeeder.Shared;
 
 namespace TrueNewsFeeder.Repositories.Services.Implemantation
 {
-    public class TheGuardianNewsFactoryServiceImp : BaseNewsFactoryService<TheGuardianNewsResponse>, INewsfeed
+    public class TheGuardianNewsRepositoryFactoryImp : BaseNewsRepositoryFactory<TheGuardianNewsResponse>, INewsFeedConnector
     {
         public override async Task<IList<UniversalNewsEntity>> GetNewsArticlesAsync()
         {
@@ -22,7 +22,7 @@ namespace TrueNewsFeeder.Repositories.Services.Implemantation
             return await GetNewsArticlesAsync(request);
         }
 
-        public async Task<IList<UniversalNewsEntity>> GetNewsfeedAsync()
+        public async Task<IList<UniversalNewsEntity>> GetNewsFeedAsync()
         {
            return await GetNewsArticlesAsync();
         }

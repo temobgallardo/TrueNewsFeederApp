@@ -1,22 +1,19 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Threading.Tasks;
-using TrueNewsFeeder.Models;
 using TrueNewsFeeder.Repositories.Services.Implemantation;
 using TrueNewsFeeder.Repositories.Services.Interfaces;
 
 namespace TrueNewsFeeder.Repositories.Services.Implementation
 {
-    public class NewsfeedFactory : INewsfeedFactory
+    public class NewsFeedFactory : INewsFeedRepositoriesFactory
     {
-        public INewsfeed GetNewsfeed(NewsfeedFactorySource source)
+        public INewsFeedConnector GetNewsFeed(ENewsFeedFactorySource source)
         {
             switch (source)
             {
-                case NewsfeedFactorySource.Guardian:
-                    return new TheGuardianNewsFactoryServiceImp();
-                case NewsfeedFactorySource.NewsAPI:
-                    return new NewsApiNewsFactoryServiceImp();
+                case ENewsFeedFactorySource.Guardian:
+                    return new TheGuardianNewsRepositoryFactoryImp();
+                case ENewsFeedFactorySource.NewsAPI:
+                    return new NewsApiNewsRepositoryFactoryImp();
                 default:
                     throw new ArgumentException($"Type not implemented : {source}");
             }
