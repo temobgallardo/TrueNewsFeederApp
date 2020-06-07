@@ -23,7 +23,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\TrueNewsFeeder.Core\TrueNewsFeeder.Core.csproj" />
     <ProjectReference Include="..\TrueNewsFeeder.Repositories\TrueNewsFeeder.Repositories.csproj" />
     <ProjectReference Include="..\TrueNewsFeeder.Shared\TrueNewsFeeder.Shared.csproj" />
     <ProjectReference Include="..\TrueNewsFeeder.Utils\TrueNewsFeeder.Utils.csproj" />

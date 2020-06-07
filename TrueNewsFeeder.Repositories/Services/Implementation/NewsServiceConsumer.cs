@@ -11,7 +11,7 @@ using TrueNewsFeeder.Shared;
 
 namespace TrueNewsFeeder.Repositories.Services.Implemantation
 {
-    public class NewsServiceConsumer : IUniversalNewsService, IService
+    public class NewsServiceConsumer : IUniversalNewsRepository, IService
     {
         private static readonly HttpClient _httpClient = new HttpClient();
 
@@ -63,7 +63,7 @@ namespace TrueNewsFeeder.Repositories.Services.Implemantation
             return default;
         }
 
-        public async Task<IList<Article>> GetNewsArticle()
+        public async Task<IList<Article>> GetNewsArticles()
         {
             try
             {
@@ -102,7 +102,7 @@ namespace TrueNewsFeeder.Repositories.Services.Implemantation
             return default;
         }
 
-        public async Task<IList<Article>> GetNewsArticle(string sourcesRequest)
+        public async Task<IList<Article>> GetNewsArticles(string sourcesRequest)
         {
             try
             {

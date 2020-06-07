@@ -2,7 +2,7 @@
 using TrueNewsFeeder.Utils;
 using Xunit;
 
-namespace TrueNewsFeeder.UnitTest
+namespace TrueNewsFeeder.UnitTest.Utils
 {
     public class UtilUnitTest
     {

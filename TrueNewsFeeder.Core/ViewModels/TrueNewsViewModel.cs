@@ -1,45 +1,51 @@
 ﻿using MvvmCross.Commands;
 using MvvmCross.Navigation;
 using MvvmCross.ViewModels;
-using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using TrueNewsFeeder.Models.NewsApi;
+using TrueNewsFeeder.Models;
 using TrueNewsFeeder.Repositories.Services.Interfaces;
-using TrueNewsFeeder.Shared;
 
 namespace TrueNewsFeeder.Core.ViewModels
 {
     public class TrueNewsViewModel : BaseViewModel
     {
-        private readonly IUniversalNewsService _service;
+        private readonly INewsFeedManager _newsRepository;
+        private readonly INewsFeedRepositoriesFactory _newsfeedFactory;
 
-        public MvxObservableCollection<Article> Articles { get; private set; }
-        public MvxObservableCollection<Article> CachedArticles { get; private set; }
+        public MvxObservableCollection<UniversalNewsEntity> Articles { get; private set; }
+        public MvxObservableCollection<UniversalNewsEntity> CachedArticles { get; private set; }
         public IMvxCommand<string> FilterNewsCommandAsync { get; private set; }
-        public IMvxAsyncCommand<Article> OnTrueNewsRowSelectedCommand { get; private set; }
+        public IMvxAsyncCommand<UniversalNewsEntity> OnTrueNewsRowSelectedCommand { get; private set; }
         public IMvxAsyncCommand GetNewsCommandAsync { get; private set; }
 
-        public TrueNewsViewModel(IMvxNavigationService mvxNavigationService, IUniversalNewsService serviceApi) : base(mvxNavigationService)
+        public TrueNewsViewModel(IMvxNavigationService mvxNavigationService,
+            INewsFeedManager newsRepository,
+            INewsFeedRepositoriesFactory newsfeedFactory) : base(mvxNavigationService)
         {
-            _service = serviceApi;
-            Articles = new MvxObservableCollection<Article>();
-            CachedArticles = new MvxObservableCollection<Article>();
+            _newsfeedFactory = newsfeedFactory;
+            _newsRepository = newsRepository;
+            Articles = new MvxObservableCollection<UniversalNewsEntity>();
+            CachedArticles = new MvxObservableCollection<UniversalNewsEntity>();
             GetNewsCommandAsync = new MvxAsyncCommand(GetNewsArticleAsync);
             FilterNewsCommandAsync = new MvxCommand<string>(FilterNewsByTitle);
-            OnTrueNewsRowSelectedCommand = new MvxAsyncCommand<Article>(LeapToTrueNewsDetailViewModel);
+            OnTrueNewsRowSelectedCommand = new MvxAsyncCommand<UniversalNewsEntity>(LeapToTrueNewsDetailViewModel);
+
+            _newsRepository.Add(_newsfeedFactory.GetNewsFeed(ENewsFeedFactorySource.Guardian));
+            _newsRepository.Add(_newsfeedFactory.GetNewsFeed(ENewsFeedFactorySource.NewsAPI));
+
         }
 
-        private async Task LeapToTrueNewsDetailViewModel(Article article)
+        private async Task LeapToTrueNewsDetailViewModel(UniversalNewsEntity article)
         {
-            await _navigationService.Navigate<TrueNewsDetailViewModel, Article>(article);
+            await _navigationService.Navigate<TrueNewsDetailViewModel, UniversalNewsEntity>(article);
         }
 
         private void FilterNewsByTitle(string toSearch)
         {
             /**
-             * CachedArticles was initialized in ViewAppearing()
+             * CachedArticles was initialized in Initialize()
              */
             if (string.IsNullOrEmpty(toSearch))
             {
@@ -56,9 +62,8 @@ namespace TrueNewsFeeder.Core.ViewModels
             }
         }
 
-        public override async void ViewAppearing()
+        public override async Task Initialize()
         {
-            base.ViewAppearing();
             var articles = await GetArticlesFromNewsServiceAsync();
 
             if (articles == null || !articles.Any())
@@ -70,14 +75,14 @@ namespace TrueNewsFeeder.Core.ViewModels
             CachedArticles.AddRange(articles);
         }
 
-        public async Task<IList<Article>> GetArticlesFromNewsServiceAsync()
+        public async Task<IList<UniversalNewsEntity>> GetArticlesFromNewsServiceAsync()
         {
-            var request = string.Format(
-               AppSettingsManager.Settings["UriHolderBySources"]
-               , AppSettingsManager.Settings["Service"]
-               , AppSettingsManager.Settings["Language"]
-               , AppSettingsManager.Settings["AppSecret"]);
-            var articles = await _service.GetNewsArticle(request);
+            //var request = string.Format(
+            //   AppSettingsManager.Settings["UriHolderBySources"]
+            //   , AppSettingsManager.Settings["Service"]
+            //   , AppSettingsManager.Settings["Language"]
+            //   , AppSettingsManager.Settings["AppSecret"]);
+            var articles = await _newsRepository.GetNewsFeedAsync();
 
             if (articles == null)
             {
@@ -90,7 +95,7 @@ namespace TrueNewsFeeder.Core.ViewModels
         // Todo: More Functional Programming Here!
         private async Task GetNewsArticleAsync()
         {
-            var articles = await _service.GetNewsArticle();
+            var articles = await _newsRepository.GetNewsFeedAsync();
             Articles.AddRange(articles);
         }
     }

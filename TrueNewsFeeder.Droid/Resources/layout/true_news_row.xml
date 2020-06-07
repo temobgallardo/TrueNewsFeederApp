@@ -32,6 +32,7 @@
             android:fontFamily="@font/georgiab"
             android:lineSpacingExtra="8dp"
             android:layout_marginBottom="8dp"
+            android:justificationMode="inter_word"
             app:MvxBind="Text Title"/>
         <TextView
             android:layout_marginTop="4dp"
@@ -40,6 +41,7 @@
             android:textSize="16sp"
             android:fontFamily="@font/georgia"
             android:lineSpacingExtra="8dp"
+            android:justificationMode="inter_word"
             app:MvxBind="Text Description"/>
     </LinearLayout>
 </android.support.v7.widget.CardView>
