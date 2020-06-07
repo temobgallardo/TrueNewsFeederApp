@@ -2,7 +2,6 @@
 using MvvmCross.IoC;
 using MvvmCross.ViewModels;
 using TrueNewsFeeder.Core.ViewModels;
-using TrueNewsFeeder.Models.NewsApi;
 using TrueNewsFeeder.Repositories.Services.Implementation;
 using TrueNewsFeeder.Repositories.Services.Interfaces;
 
