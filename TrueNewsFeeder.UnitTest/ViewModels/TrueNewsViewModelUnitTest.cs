@@ -1,13 +1,10 @@
 ﻿using Moq;
 using MvvmCross.Base;
-using MvvmCross.Navigation;
 using MvvmCross.Core.Views;
 using MvvmCross.Tests;
 using NUnit.Framework;
-using TrueNewsFeeder.Core.ViewModels;
 using TrueNewsFeeder.Repositories.Services.Interfaces;
 using TrueNewsFeeder.UnitTest.ViewModels;
-using System;
 
 namespace TrueNewsFeeder.UnitTest
 {
@@ -22,7 +19,7 @@ namespace TrueNewsFeeder.UnitTest
 
         protected override void AdditionalSetup()
         {
-            var newsService = new Mock<IUniversalNewsService>();
+            var newsService = new Mock<IUniversalNewsRepository>();
             Ioc.RegisterSingleton(newsService.Object);
             MockDispatcher = new MockDispatcher();
             Ioc.RegisterSingleton<IMvxViewDispatcher>(MockDispatcher);
@@ -34,7 +31,7 @@ namespace TrueNewsFeeder.UnitTest
         //{
         //    base.Setup();
 
-        //    var newsApiService = new Mock<IUniversalNewsService>();
+        //    var newsApiService = new Mock<IUniversalNewsRepository>();
         //    var navService = new Mock<IMvxNavigationService>();
         //    var trueNewsViewModel = new TrueNewsViewModel(navService.Object, newsApiService.Object);
 

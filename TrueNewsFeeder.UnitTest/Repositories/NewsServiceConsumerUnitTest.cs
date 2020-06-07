@@ -4,7 +4,7 @@ using TrueNewsFeeder.Repositories.Services.Implemantation;
 using TrueNewsFeeder.Shared;
 using Xunit;
 
-namespace TrueNewsFeeder.UnitTest
+namespace TrueNewsFeeder.UnitTest.Repositories
 {
     public class NewsServiceConsumerUnitTest
     {
@@ -44,7 +44,7 @@ namespace TrueNewsFeeder.UnitTest
         public async Task ShouldGetNewsArticles()
         {
             var service = new NewsServiceConsumer();
-            var result = await service.GetNewsArticle();
+            var result = await service.GetNewsArticles();
             Assert.NotNull(result);
             Assert.NotEmpty(result);
         }
@@ -58,7 +58,7 @@ namespace TrueNewsFeeder.UnitTest
                 , AppSettingsManager.Settings["Language"]
                 , AppSettingsManager.Settings["AppSecret"]);
             var service = new NewsServiceConsumer();
-            var result = await service.GetNewsArticle(request);
+            var result = await service.GetNewsArticles(request);
             Assert.NotNull(result);
             Assert.NotEmpty(result);
         }
