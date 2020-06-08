@@ -41,7 +41,22 @@ namespace TrueNewsFeeder.Droid.Views
         public void SetWebViewInDetailView()
         {
             _webView = FindViewById<WebView>(Resource.Id.true_news_detail_webview);
+
+            if (Build.VERSION.SdkInt >= Android.OS.BuildVersionCodes.Kitkat)
+            {
+                // chromium, enable hardware acceleration
+                _webView.SetLayerType(LayerType.Hardware, null);
+            }
+            else
+            {
+                // older android version, disable hardware acceleration
+                _webView.SetLayerType(LayerType.Software, null);
+            }
+
             _webView.LoadUrl(ViewModel.Article.Url);
+
+            //By default it is false and needs a database valid path if set to true in SetAppCachePath(String). 
+            //_webView.Settings.SetAppCacheEnabled(false);
         }
     }
 }
