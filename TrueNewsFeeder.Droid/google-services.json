@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "184809223570",
+    "firebase_url": "https://true-news-feed-database.firebaseio.com",
+    "project_id": "true-news-feed-database",
+    "storage_bucket": "true-news-feed-database.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:184809223570:android:532ae91f035c8c877b7d4b",
+        "android_client_info": {
+          "package_name": "com.companyname.truenewsfeeder"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "184809223570-4pqjmju5gptna0k00p4d3avjdqfk6udj.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.companyname.truenewsfeeder",
+            "certificate_hash": "c7cb15d81a7fda4c706d7b90ec122fab438ead81"
+          }
+        },
+        {
+          "client_id": "184809223570-35qcjda40gpjtkhu6li1hgb0l4qa7u07.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyANwKV7QnXzfsL_yZGgrnl1E3ZkG3TFyBQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "184809223570-35qcjda40gpjtkhu6li1hgb0l4qa7u07.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
