@@ -19,7 +19,7 @@ namespace TrueNewsFeeder.UnitTest
 
         protected override void AdditionalSetup()
         {
-            var newsService = new Mock<IUniversalNewsRepository>();
+            var newsService = new Mock<INewsFeedConnector>();
             Ioc.RegisterSingleton(newsService.Object);
             MockDispatcher = new MockDispatcher();
             Ioc.RegisterSingleton<IMvxViewDispatcher>(MockDispatcher);

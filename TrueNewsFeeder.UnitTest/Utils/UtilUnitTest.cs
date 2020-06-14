@@ -15,7 +15,7 @@ namespace TrueNewsFeeder.UnitTest.Utils
             //Assembly.GetExecutingAssembly().GetManifestResourceNames()
             var fileName = "mockdata.json";
             // I pass the NewServiceConsumer typeof becouse the data is located in that namespace
-            var result = Util.Instance.ReadResourceFile(fileName, typeof(NewsServiceConsumer));
+            var result = Util.Instance.ReadResourceFile(fileName, typeof(TheGuardianNewsRepositoryFactoryImp));
             Assert.NotEmpty(result.Result);
         }
     }
