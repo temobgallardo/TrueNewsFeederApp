@@ -5,6 +5,9 @@ using Firebase;
 using Firebase.Firestore;
 using MvvmCross.Droid.Support.V7.AppCompat;
 using TrueNewsFeeder.Core;
+using Microsoft.AppCenter;
+using Microsoft.AppCenter.Analytics;
+using Microsoft.AppCenter.Crashes;
 
 namespace TrueNewsFeeder.Droid
 {
@@ -17,6 +20,12 @@ namespace TrueNewsFeeder.Droid
         public override void OnCreate()
         {
             base.OnCreate();
+
+            AppCenter.Start("d5ad5ac4-fe79-4421-af13-e6591cafdd55",
+                   typeof(Analytics), typeof(Crashes));
+
+            Analytics.TrackEvent("Video clicked");
+
             GetFirestore();
         }
 
