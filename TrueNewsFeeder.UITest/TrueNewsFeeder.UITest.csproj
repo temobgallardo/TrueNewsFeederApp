@@ -37,12 +37,19 @@
     <PackageReference Include="NUnit" Version="3.12.0" />
     <PackageReference Include="Xamarin.UITest" Version="3.0.3" />
     <PackageReference Include="NUnit3TestAdapter" Version="3.13.0" />
+    <PackageReference Include="Xamarin.UITest.POP">
+      <Version>1.0.0</Version>
+    </PackageReference>
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="Tests.cs" />
-    <Compile Include="AppInitializer.cs" />
+    <Compile Include="PageObjectPattern\AppManager.cs" />
+    <Compile Include="PageObjectPattern\BasePage.cs" />
+    <Compile Include="PageObjectPattern\BaseTestFixture.cs" />
+    <Compile Include="PageObjectPattern\BaseTestFixtureAfterLogin.cs" />
+    <Compile Include="PageObjectPattern\PlatformQuery.cs" />
+    <Compile Include="Pages\HomePage.cs" />
+    <Compile Include="HomePageTest.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>

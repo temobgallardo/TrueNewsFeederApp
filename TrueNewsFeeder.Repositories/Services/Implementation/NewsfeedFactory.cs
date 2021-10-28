@@ -4,6 +4,7 @@ using TrueNewsFeeder.Repositories.Services.Interfaces;
 
 namespace TrueNewsFeeder.Repositories.Services.Implementation
 {
+    //TODO: This violates the OPEN-CLOSE Principle. An Enum is not open for extensions. https://blog.usejournal.com/factory-design-pattern-c-a330955b9ed6
     public class NewsFeedFactory : INewsFeedRepositoriesFactory
     {
         public INewsFeedConnector GetNewsFeed(ENewsFeedFactorySource source)

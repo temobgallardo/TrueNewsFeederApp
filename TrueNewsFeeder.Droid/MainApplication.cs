@@ -29,6 +29,7 @@ namespace TrueNewsFeeder.Droid
             GetFirestore();
         }
 
+        //TODO: Need to be fixed to get the credentials from the google-service.json file
         public FirebaseFirestore GetFirestore()
         {
             var options = new FirebaseOptions.Builder()
